@@ -119,11 +119,12 @@ public class SignUp extends AppCompatActivity {
                                 if(task.isSuccessful())
                                 {
                                     Toast.makeText(SignUp.this, "Data Stored", Toast.LENGTH_SHORT).show();
+                                    loadingBar.dismiss();
                                 }
                                 else
                                 {
                                     Toast.makeText(SignUp.this, "Network Error", Toast.LENGTH_SHORT).show();
-
+                                    loadingBar.dismiss();
                                 }
                             }
                         });

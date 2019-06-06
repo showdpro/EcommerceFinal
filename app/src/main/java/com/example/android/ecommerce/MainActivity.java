@@ -15,13 +15,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         final ImageView logo=(ImageView)findViewById(R.id.logo);
         super.onCreate(savedInstanceState);
-        final Intent Signup=new Intent(MainActivity.this,SignUp.class);
         setContentView(R.layout.activity_main);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 Intent screen= new Intent(MainActivity.this,FirstPage.class);
-                //startActivity(screen);
+                startActivity(screen);
                 finish();
             }
         },SPLASH_TIME_OUT);
