@@ -14,4 +14,23 @@
     <string name="menu_tools">Tools</string>
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
+
+    <string name="top1">White Striped Dress</string>
+    <string name="top1_brand">HERE&amp;NOW</string>
+    <string name="top1_price"><strike>₹1200</strike></string>
+    <string name="top1_dicount_price">₹960</string>
+    <string name="top1_dicount_percent">(20% OFF)</string>
+    <string name="cart">Cart</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="add_cart">Cart</string>
+    <string name="size_xs">XS</string>
+    <string name="size_s">S</string>
+    <string name="size_m">M</string>
+    <string name="size_l">L</string>
+    <string name="size_xl">XL</string>
+    <string name="size_xxl">XXL</string>
+    <string name="select_size">select size</string>
+    <string name="size_chart">size chart</string>
+    <string name="return_days">Easy 30 days returns and exchanges</string>
+    <string name="return_days_describe">Choose to return or exchange for a different size(if available) within 30 days</string>
 </resources>
