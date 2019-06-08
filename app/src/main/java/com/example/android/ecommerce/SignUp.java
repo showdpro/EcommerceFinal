@@ -56,11 +56,11 @@ public class SignUp extends AppCompatActivity {
     private void CreateAcc()
     {
 
-        String nam,mnum,pass,cpass;
+        String nam,mnum;
         nam = name.getText().toString();
         mnum=monum.getText().toString();
-        pass=password.getText().toString();
-        cpass=cpassword.getText().toString();
+        //pass=password.getText().toString();
+        //cpass=cpassword.getText().toString();
 
         if(TextUtils.isEmpty(nam))
         {
@@ -71,7 +71,7 @@ public class SignUp extends AppCompatActivity {
         {
             Toast.makeText(this, "Please Write Your Number", Toast.LENGTH_SHORT).show();
         }
-        else if(TextUtils.isEmpty(pass))
+        /*else if(TextUtils.isEmpty(pass))
         {
             Toast.makeText(this, "Please Enter Password", Toast.LENGTH_SHORT).show();
         }
@@ -82,7 +82,7 @@ public class SignUp extends AppCompatActivity {
         else if(!(pass.equals(cpass)))
         {
             Toast.makeText(this, "Please Enter the password again", Toast.LENGTH_SHORT).show();
-        }
+        }*/
         else
         {
             loadingBar.setTitle("Creating Account");
@@ -90,12 +90,12 @@ public class SignUp extends AppCompatActivity {
             loadingBar.setCanceledOnTouchOutside(false);
             loadingBar.show();
 
-            AddAcc(nam,mnum,pass);
+            AddAcc(nam,mnum);
         }
 
     }
 
-    private void AddAcc(final String nam, final String mnum,final String pass)
+    private void AddAcc(final String nam, final String mnum)
     {
         final DatabaseReference Rootref;
         Rootref= FirebaseDatabase.getInstance().getReference();
@@ -104,39 +104,30 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-            if(!(dataSnapshot.child("Users").child(mnum).exists()))
-            {
-                HashMap<String,Object>userDataMap=new HashMap<>();
-                userDataMap.put("Name",nam);
-                userDataMap.put("Phone No.",mnum);
-                userDataMap.put("Password",pass);
-                Rootref.child("Users").child(mnum).updateChildren(userDataMap)
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task)
-                            {
+                if (!(dataSnapshot.child("Users").child(mnum).exists())) {
+                    HashMap<String, Object> userDataMap = new HashMap<>();
+                    userDataMap.put("Name", nam);
+                    userDataMap.put("Phone No.", mnum);
+                    Rootref.child("Users").child(mnum).updateChildren(userDataMap)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
 
-                                if(task.isSuccessful())
-                                {
-                                    Toast.makeText(SignUp.this, "Data Stored", Toast.LENGTH_SHORT).show();
-                                    loadingBar.dismiss();
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(SignUp.this, "Data Stored", Toast.LENGTH_SHORT).show();
+                                        loadingBar.dismiss();
+                                    } else {
+                                        Toast.makeText(SignUp.this, "Network Error", Toast.LENGTH_SHORT).show();
+                                        loadingBar.dismiss();
+                                    }
                                 }
-                                else
-                                {
-                                    Toast.makeText(SignUp.this, "Network Error", Toast.LENGTH_SHORT).show();
-                                    loadingBar.dismiss();
-                                }
-                            }
-                        });
+                            });
 
 
-            }
-
-            else
-            {
-                loadingBar.dismiss();
-                Toast.makeText(SignUp.this, "Number is Already Present", Toast.LENGTH_SHORT).show();
-            }
+                } else {
+                    loadingBar.dismiss();
+                    Toast.makeText(SignUp.this, "Number is Already Present", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
