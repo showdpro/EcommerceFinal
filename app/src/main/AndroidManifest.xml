@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 <<<<<<< HEAD
+>>>>>>> HEAD
         <activity android:name=".Address_activity"></activity>
 =======
         <activity android:name=".SettingActivity"></activity>
