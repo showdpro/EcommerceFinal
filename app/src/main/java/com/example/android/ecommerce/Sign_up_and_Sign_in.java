@@ -9,6 +9,7 @@ import android.widget.Button;
 public class Sign_up_and_Sign_in extends AppCompatActivity {
     Button SignIn,SignUp;
     Intent tSignUp;
+    Intent tSignIn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -16,10 +17,16 @@ public class Sign_up_and_Sign_in extends AppCompatActivity {
         SignIn=(Button)findViewById(R.id.button_sign_in);
         tSignUp=new Intent(Sign_up_and_Sign_in.this,SignUp.class);
         setContentView(R.layout.activity_sign_up_and__sign_in);
+        tSignIn=new Intent(Sign_up_and_Sign_in.this,FirstPage.class);
     }
     public void toSignUp(View view)
     {
         startActivity(tSignUp);
+
+    }
+    public void toSignIn(View view)
+    {
+       startActivity(tSignIn);
 
     }
 }
