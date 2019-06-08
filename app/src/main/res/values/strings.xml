@@ -53,4 +53,15 @@
     <string name="ethnic_wear">Ethnic Wear</string>
     <string name="sign_in">sign in</string>
     <string name="sign_up">sign up</string>
+    <string name="Name">Name*</string>
+    <string name="phone">Mobile No.*</string>
+    <string name="pin_code">Pin Code*</string>
+    <string name="address">Address(House No., Building, Street, Area)*</string>
+    <string name="locality">Locality/Town*</string>
+    <string name="city">City/District*</string>
+    <string name="state">State*</string>
+    <string name="type_address">Type of Address*</string>
+    <string name="home">Home</string>
+    <string name="office">Office/Commercial</string>
+    <string name="default_address">Make this my default address</string>
 </resources>
