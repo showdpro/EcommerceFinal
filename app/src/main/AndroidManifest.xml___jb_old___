@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.android.ecommerce">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+<<<<<<< HEAD
+
+        <activity android:name=".Address_activity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".SettingActivity"
+            android:screenOrientation="portrait"/>
+
+=======
+<<<<<<< HEAD
+>>>>>>> HEAD
+        <activity android:name=".Address_activity"></activity>
+=======
+        <activity android:name=".SettingActivity"></activity>
+>>>>>>> 80fa906504e9c685dbbd41353713b888d15a3b64
+>>>>>>> 25527933da068519046b40f3ffdee92a6c04ef81
+        <activity
+            android:name=".Sign_up_and_Sign_in"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ProjectDescription"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SignUp"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FirstPage"
+            android:label="@string/title_activity_first_page"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
