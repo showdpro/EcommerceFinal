@@ -115,6 +115,10 @@ public class FirstPage extends AppCompatActivity
         {
             startActivity(tSignInSignUp);
         }
+        else if (id == R.id.nav_rate_us)
+        {
+
+        }
         else if (id == R.id.nav_share)
         {
 

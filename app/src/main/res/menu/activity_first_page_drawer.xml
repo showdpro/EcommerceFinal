@@ -44,6 +44,10 @@
     <item android:title="Communicate">
         <menu>
             <item
+                android:id="@+id/nav_rate_us"
+                android:icon="@drawable/ic_star_border_black_24dp"
+                android:title="Rate us" />
+            <item
                 android:id="@+id/nav_share"
                 android:icon="@drawable/ic_menu_share"
                 android:title="@string/menu_share" />
