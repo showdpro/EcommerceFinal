@@ -33,4 +33,24 @@
     <string name="size_chart">size chart</string>
     <string name="return_days">Easy 30 days returns and exchanges</string>
     <string name="return_days_describe">Choose to return or exchange for a different size(if available) within 30 days</string>
+    <string name="women">Women</string>
+    <string name="men">Men</string>
+    <string name="kids">Kids</string>
+    <string name="amazing_offers">Amazing offers</string>
+    <string name="western_wear">Western Wear</string>
+    <string name="get_now">GET NOW+</string>
+    <string name="shop_now">SHOP+</string>
+    <string name="trending">THE ETHNIC EDIT</string>
+    <string name="ethnic_tag_line">Channel your <italic>Desi</italic> Avatar with Trendy <italic>Kurtas and Sarees</italic></string>
+    <string name="footwear">Footwear</string>
+    <string name="define">They Define You</string>
+    <string name="special_occasions">For Your Special Occasions</string>
+    <string name="swag">Shake Up your Wardrobe with some extra <italic>Swag</italic></string>
+    <string name="ethnic_charm">Add <italic>Charm</italic> to those Special Occasions</string>
+    <string name="foot_tag_line">Life can be Boring but not your Shoes</string>
+    <string name="ethnic_kids">Fancy Wear for your Li\'l ones</string>
+    <string name="foot_kids">Fashion footwear to comfort your Li\'l ones</string>
+    <string name="ethnic_wear">Ethnic Wear</string>
+    <string name="sign_in">sign in</string>
+    <string name="sign_up">sign up</string>
 </resources>

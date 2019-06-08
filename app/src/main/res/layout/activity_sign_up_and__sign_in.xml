@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/sign_up"
+        android:scaleType="centerCrop"
+        android:src="@drawable/back_9" />
+
+    <Button
+        android:id="@+id/button_sign_in"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+
+        android:layout_centerInParent="true"
+        android:background="@drawable/button_box"
+        android:text="@string/sign_in"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button_sign_up"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_below="@+id/button_sign_in"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_box_white"
+        android:onClick="toSignUp"
+        android:text="@string/sign_up"
+        android:textAllCaps="true"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
