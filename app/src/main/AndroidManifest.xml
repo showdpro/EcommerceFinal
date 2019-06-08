@@ -11,8 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Sign_up_and_Sign_in"
-            android:screenOrientation="portrait"/>
+        <activity android:name=".SettingActivity"></activity>
+        <activity
+            android:name=".Sign_up_and_Sign_in"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ProjectDescription"
             android:screenOrientation="portrait" />
