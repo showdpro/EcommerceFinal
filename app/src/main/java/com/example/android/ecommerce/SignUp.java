@@ -104,38 +104,30 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-            if(!(dataSnapshot.child("Users").child(mnum).exists()))
-            {
-                HashMap<String,Object>userDataMap=new HashMap<>();
-                userDataMap.put("Name",nam);
-                userDataMap.put("Phone No.",mnum);
-                Rootref.child("Users").child(mnum).updateChildren(userDataMap)
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task)
-                            {
+                if (!(dataSnapshot.child("Users").child(mnum).exists())) {
+                    HashMap<String, Object> userDataMap = new HashMap<>();
+                    userDataMap.put("Name", nam);
+                    userDataMap.put("Phone No.", mnum);
+                    Rootref.child("Users").child(mnum).updateChildren(userDataMap)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
 
-                                if(task.isSuccessful())
-                                {
-                                    Toast.makeText(SignUp.this, "Data Stored", Toast.LENGTH_SHORT).show();
-                                    loadingBar.dismiss();
+                                    if (task.isSuccessful()) {
+                                        Toast.makeText(SignUp.this, "Data Stored", Toast.LENGTH_SHORT).show();
+                                        loadingBar.dismiss();
+                                    } else {
+                                        Toast.makeText(SignUp.this, "Network Error", Toast.LENGTH_SHORT).show();
+                                        loadingBar.dismiss();
+                                    }
                                 }
-                                else
-                                {
-                                    Toast.makeText(SignUp.this, "Network Error", Toast.LENGTH_SHORT).show();
-                                    loadingBar.dismiss();
-                                }
-                            }
-                        });
+                            });
 
 
-            }
-
-            else
-            {
-                loadingBar.dismiss();
-                Toast.makeText(SignUp.this, "Number is Already Present", Toast.LENGTH_SHORT).show();
-            }
+                } else {
+                    loadingBar.dismiss();
+                    Toast.makeText(SignUp.this, "Number is Already Present", Toast.LENGTH_SHORT).show();
+                }
             }
 
             @Override
