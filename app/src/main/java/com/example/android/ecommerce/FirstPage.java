@@ -1,5 +1,6 @@
 package com.example.android.ecommerce;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,6 +17,8 @@ import android.view.Menu;
 
 public class FirstPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    Intent tSettings;
+    Intent tSignInSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,8 @@ public class FirstPage extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
+        tSettings=new Intent(FirstPage.this,SettingActivity.class);
+        tSignInSignUp=new Intent(FirstPage.this,Sign_up_and_Sign_in.class);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -96,13 +101,21 @@ public class FirstPage extends AppCompatActivity
         }
         else if (id == R.id.nav_setting)
         {
-
+            startActivity(tSettings);
         }
         else if (id == R.id.nav_My_order)
         {
 
         }
         else if (id == R.id.nav_My_cart)
+        {
+
+        }
+        else if (id == R.id.nav_logout)
+        {
+            startActivity(tSignInSignUp);
+        }
+        else if (id == R.id.nav_rate_us)
         {
 
         }

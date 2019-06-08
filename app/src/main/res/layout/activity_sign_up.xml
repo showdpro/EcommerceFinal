@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".SignUp"
     android:orientation="vertical"
-    android:background="@drawable/gradient2">
+    android:background="@drawable/gradient3">
 
     <TextView
         android:id="@+id/text1"
@@ -33,7 +33,7 @@
         android:id="@+id/Name"
         android:layout_width="300dp"
         android:layout_height="35dp"
-        android:background="#ffff"
+        android:background="@drawable/curve_shape"
         android:layout_marginLeft="35dp"
         android:layout_below="@id/text2"
         android:layout_marginTop="13dp"/>
@@ -52,7 +52,8 @@
         android:id="@+id/Mno"
         android:layout_width="300dp"
         android:layout_height="35dp"
-        android:background="#ffff"
+
+        android:background="@drawable/curve_shape"
         android:layout_marginLeft="35dp"
         android:layout_below="@id/text2"
         android:layout_marginTop="13dp"/>
@@ -70,7 +71,8 @@
         android:id="@+id/password"
         android:layout_width="300dp"
         android:layout_height="35dp"
-        android:background="#ffff"
+
+        android:background="@drawable/curve_shape"
         android:layout_marginLeft="35dp"
         android:layout_below="@id/text2"
         android:layout_marginTop="13dp"
@@ -90,7 +92,8 @@
         android:id="@+id/Cpassword"
         android:layout_width="300dp"
         android:layout_height="35dp"
-        android:background="#ffff"
+
+        android:background="@drawable/curve_shape"
         android:layout_marginLeft="35dp"
         android:layout_below="@id/text2"
         android:layout_marginTop="13dp"

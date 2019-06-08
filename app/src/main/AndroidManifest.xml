@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".Address_activity"></activity>
+=======
+        <activity android:name=".SettingActivity"></activity>
+>>>>>>> 80fa906504e9c685dbbd41353713b888d15a3b64
         <activity
             android:name=".Sign_up_and_Sign_in"
             android:screenOrientation="portrait" />
