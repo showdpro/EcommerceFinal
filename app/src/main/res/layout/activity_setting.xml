@@ -85,7 +85,7 @@
     <EditText
         android:layout_width="295dp"
         android:layout_height="40dp"
-
+        android:
         android:text="Mobile Number"
         android:fontFamily="serif"
         android:layout_marginLeft="13dp"
