@@ -12,18 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 >>>>>>> HEAD
-=======
-
-        <activity android:name=".Address_activity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".SettingActivity"
-            android:screenOrientation="portrait"/>
-
->>>>>>> 793a4bee549f1d79f29cd6700c8372525d24e88e
         <activity android:name=".Address_activity"></activity>
-
+=======
         <activity android:name=".SettingActivity"></activity>
+>>>>>>> 80fa906504e9c685dbbd41353713b888d15a3b64
         <activity
             android:name=".Sign_up_and_Sign_in"
             android:screenOrientation="portrait" />
