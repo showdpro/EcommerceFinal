@@ -11,16 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-        <activity android:name=".Address_activity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".SettingActivity"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".Address_activity"></activity>
-
-        <activity android:name=".SettingActivity"></activity>
+        <activity android:name=".Authentication"></activity>
+        <activity android:name=".MyAccount" />
+        <activity
+            android:name=".Address_activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SettingActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Sign_up_and_Sign_in"
             android:screenOrientation="portrait" />
