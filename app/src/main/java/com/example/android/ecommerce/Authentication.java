@@ -30,7 +30,6 @@ public class Authentication extends AppCompatActivity {
 
     Intent goToFirstPage;
 
-
     private static final int MY_REQUEST_CODE = 7117;
     List<AuthUI.IdpConfig> providers;
 
