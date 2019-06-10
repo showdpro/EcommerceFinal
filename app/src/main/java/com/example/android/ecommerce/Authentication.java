@@ -28,7 +28,7 @@ import java.util.List;
 
 public class Authentication extends AppCompatActivity {
 
-
+    // hi
     private static final int MY_REQUEST_CODE = 7117;
     List<AuthUI.IdpConfig> providers;
     Button btn_sign_out;
