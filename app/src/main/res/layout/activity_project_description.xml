@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,7 +21,7 @@
 
             <android.support.v7.widget.CardView
                 android:id="@+id/card_view"
-                android:layout_width="400dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 card_view:cardBackgroundColor="#FFF"
@@ -38,13 +39,13 @@
 
                     <android.support.v4.view.ViewPager
                         android:id="@+id/cloth1_view_pager"
-                        android:layout_width="300dp"
+                        android:layout_width="match_parent"
                         android:layout_height="400dp" />
 
 
                     <TextView
                         android:id="@+id/product_brand"
-                        android:layout_width="300dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/cloth1_view_pager"
                         android:background="@android:color/transparent"
@@ -57,7 +58,7 @@
 
                     <TextView
                         android:id="@+id/product_name"
-                        android:layout_width="300dp"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/product_brand"
                         android:layout_gravity="center_horizontal"
@@ -72,8 +73,8 @@
                         android:textStyle="normal" />
 
                     <LinearLayout
-                        android:id="@+id/linera_layout_price"
-                        android:layout_width="300dp"
+                        android:id="@+id/linear_layout_price"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/product_name"
                         android:orientation="horizontal">
@@ -102,7 +103,7 @@
                             android:textStyle="normal" />
 
                         <TextView
-                            android:id="@+id/product_dicount"
+                            android:id="@+id/product_discount"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="30dp"
@@ -119,7 +120,7 @@
 
             <android.support.v7.widget.CardView
                 android:id="@+id/card_view_size"
-                android:layout_width="400dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/card_view"
                 android:layout_marginStart="10dp"
@@ -130,7 +131,7 @@
 
                 <LinearLayout
                     android:id="@+id/linear_layout_size"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:paddingStart="20dp"
@@ -142,6 +143,7 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:orientation="horizontal">
 
                         <TextView
@@ -159,7 +161,7 @@
                             android:id="@+id/size_chart"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginStart="110dp"
+                            android:layout_marginStart="150dp"
                             android:background="@android:color/transparent"
                             android:clickable="true"
                             android:focusable="true"
@@ -182,8 +184,8 @@
                         <Button
                             android:id="@+id/ExtraSmall"
                             style="?android:attr/buttonBarButtonStyle"
-                            android:layout_width="45dp"
-                            android:layout_height="45dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:background="@drawable/circle_background"
                             android:text="@string/size_xs"
                             android:textColor="#FFF" />
@@ -191,8 +193,8 @@
                         <Button
                             android:id="@+id/Small"
                             style="?android:attr/buttonBarButtonStyle"
-                            android:layout_width="45dp"
-                            android:layout_height="45dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:layout_marginStart="5dp"
                             android:background="@drawable/circle_background"
                             android:text="@string/size_s"
@@ -201,8 +203,8 @@
                         <Button
                             android:id="@+id/Medium"
                             style="?android:attr/buttonBarButtonStyle"
-                            android:layout_width="45dp"
-                            android:layout_height="45dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:layout_marginStart="5dp"
                             android:background="@drawable/circle_background"
                             android:text="@string/size_m"
@@ -211,8 +213,8 @@
                         <Button
                             android:id="@+id/Large"
                             style="?android:attr/buttonBarButtonStyle"
-                            android:layout_width="45dp"
-                            android:layout_height="45dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:layout_marginStart="5dp"
                             android:background="@drawable/circle_background"
                             android:text="@string/size_l"
@@ -221,8 +223,8 @@
                         <Button
                             android:id="@+id/ExtraLarge"
                             style="?android:attr/buttonBarButtonStyle"
-                            android:layout_width="45dp"
-                            android:layout_height="45dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:layout_marginStart="5dp"
                             android:background="@drawable/circle_background"
                             android:text="@string/size_xl"
@@ -231,8 +233,8 @@
                         <Button
                             android:id="@+id/ExtraExtraLarge"
                             style="?android:attr/buttonBarButtonStyle"
-                            android:layout_width="45dp"
-                            android:layout_height="45dp"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
                             android:layout_marginStart="5dp"
                             android:background="@drawable/circle_background"
                             android:text="@string/size_xxl"
@@ -245,7 +247,7 @@
 
             <android.support.v7.widget.CardView
                 android:id="@+id/card_view_add_product"
-                android:layout_width="400dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/card_view_size"
                 android:layout_margin="10dp"
@@ -265,7 +267,7 @@
                     android:paddingBottom="10dp">
 
                     <LinearLayout
-                        android:layout_width="130dp"
+                        android:layout_width="166dp"
                         android:layout_height="50dp"
                         android:background="@drawable/button_outline"
                         android:orientation="horizontal">
@@ -281,11 +283,12 @@
                             android:src="@drawable/wishlist" />
 
                         <TextView
-                            android:layout_width="wrap_content"
+                            android:layout_width="95dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"
                             android:layout_marginStart="5dp"
                             android:text="@string/wishlist"
+                            android:textAlignment="center"
                             android:textAllCaps="true"
                             android:textColor="@color/colorPrimary"
                             android:textSize="16sp"
@@ -294,7 +297,7 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="150dp"
+                        android:layout_width="166dp"
                         android:layout_height="50dp"
                         android:layout_marginStart="20dp"
                         android:background="@drawable/button_outline_fill"

@@ -22,6 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_layout_name"
+                android:layout_marginTop="5dp"
                 >
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
@@ -36,13 +37,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_layout_phn"
+                android:layout_marginTop="10dp"
                 >
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/edit_phn"
                 android:textSize="15sp"
-                android:inputType="text"
+                android:inputType="number"
                 android:hint="@string/phone"/>
 
             </android.support.design.widget.TextInputLayout>
@@ -63,12 +65,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_layout_pin_code"
+                android:layout_marginTop="10dp"
                 >
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/pin_code"
-                android:inputType="text"
+                android:inputType="number"
                 android:textSize="15sp"
                 android:hint="@string/pin_code"/>
             </android.support.design.widget.TextInputLayout>
@@ -77,6 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_layout_address"
+                android:layout_marginTop="10dp"
                 >
 
             <android.support.design.widget.TextInputEditText
@@ -92,6 +96,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_layout_locality"
+                android:layout_marginTop="10dp"
                 >
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
@@ -106,6 +111,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_layout_city"
+                android:layout_marginTop="10dp"
                 >
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
@@ -120,6 +126,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_layout_state"
+                android:layout_marginTop="10dp"
                 >
             <android.support.design.widget.TextInputEditText
                 android:layout_width="match_parent"
