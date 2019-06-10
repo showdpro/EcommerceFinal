@@ -64,4 +64,9 @@
     <string name="home">Home</string>
     <string name="office">Office/Commercial</string>
     <string name="default_address">Make this my default address</string>
+    <string name="prod_brand">Brand</string>
+    <string name="prod_name">Name</string>
+    <string name="prod_price">Price</string>
+    <string name="prod_mrp">mrp</string>
+    <string name="prod_discount">disc</string>
 </resources>
