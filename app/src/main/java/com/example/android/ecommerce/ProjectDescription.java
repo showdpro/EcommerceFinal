@@ -34,8 +34,8 @@ public class ProjectDescription extends AppCompatActivity {
         editText3=findViewById(R.id.temp_user_address);
         editText4=findViewById(R.id.temp_user_email);
         editText5=findViewById(R.id.temp_user_website_url);
-        editText6=findViewById(R.id.temp_user_instagram_url);
-        editText7=findViewById(R.id.temp_user_facebook_url);
+//        editText6=findViewById(R.id.temp_user_instagram_url);
+//        editText7=findViewById(R.id.temp_user_facebook_url);
         editText8=findViewById(R.id.temp_user_designation);
         editText9=findViewById(R.id.temp_user_work_type);
 
@@ -45,8 +45,8 @@ public class ProjectDescription extends AppCompatActivity {
         int address=editText3.getText().toString().trim().length();
         int email=editText4.getText().toString().trim().length();
         int website=editText5.getText().toString().trim().length();
-        int instagram=editText6.getText().toString().trim().length();
-        int facebook=editText7.getText().toString().trim().length();
+//        int instagram=editText6.getText().toString().trim().length();
+//        int facebook=editText7.getText().toString().trim().length();
         int designation=editText8.getText().toString().trim().length();
         int work_type=editText9.getText().toString().trim().length();
 
@@ -56,8 +56,8 @@ public class ProjectDescription extends AppCompatActivity {
         textInput3=findViewById(R.id.text_layout_address);
         textInput4=findViewById(R.id.text_layout_email);
         textInput5=findViewById(R.id.text_layout_website_url);
-        textInput6=findViewById(R.id.text_layout_instagram_url);
-        textInput7=findViewById(R.id.text_layout_facebook_url);
+//        textInput6=findViewById(R.id.text_layout_instagram_url);
+//        textInput7=findViewById(R.id.text_layout_facebook_url);
         textInput8=findViewById(R.id.text_layout_designation);
         textInput9=findViewById(R.id.text_layout_work_type);
 
@@ -88,12 +88,12 @@ public class ProjectDescription extends AppCompatActivity {
             if(designation==0)
             {
 
-                textInput5.setError("This field needs to be filled");
+                textInput8.setError("This field needs to be filled");
             }
             if(work_type==0)
             {
 
-                textInput6.setError("This field needs to be filled");
+                textInput9.setError("This field needs to be filled");
             }
 
 
