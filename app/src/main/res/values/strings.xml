@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ecommerce</string>
+    <string name="app_name">So Called Shopping App</string>
     <string name="title_activity_first_page">Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -69,6 +69,7 @@
     <string name="home">Home</string>
     <string name="office">Office/Commercial</string>
     <string name="default_address">Make this my default address</string>
+    <string name="default_web_client_id" translatable="false">265565191534-5tss8r08gpe0q41ie9mmrgdv5lp7i71e.apps.googleusercontent.com</string>
     <string name="prod_brand">Brand</string>
     <string name="prod_name">Name</string>
     <string name="prod_price">Price</string>

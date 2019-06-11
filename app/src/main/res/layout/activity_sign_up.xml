@@ -138,18 +138,20 @@
             android:layout_marginLeft="05dp"
             android:layout_marginTop="15dp"/>
     </LinearLayout>
+
     <Button
         android:id="@+id/createAcc"
         android:layout_width="250dp"
         android:layout_height="35dp"
-        android:text="Create an Account"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="#EC115A"
         android:fontFamily="serif"
-        android:textSize="15dp"
+        android:onClick="Ca"
+        android:text="Create an Account"
         android:textAlignment="center"
         android:textColor="#ffff"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"
-        android:background="#EC115A"/>
+        android:textSize="15dp" />
 
 
 
