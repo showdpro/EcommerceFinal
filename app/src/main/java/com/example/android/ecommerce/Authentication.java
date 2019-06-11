@@ -19,8 +19,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
-
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 import java.util.Arrays;
@@ -29,6 +29,8 @@ import java.util.List;
 public class Authentication extends AppCompatActivity {
 
     Intent goToFirstPage;
+    FirebaseDatabase userInfo=FirebaseDatabase.getInstance();
+    DatabaseReference ref=userInfo.getReference();
 
     private static final int MY_REQUEST_CODE = 7117;
     List<AuthUI.IdpConfig> providers;
@@ -38,7 +40,6 @@ public class Authentication extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_authentication);
-
         setContentView(R.layout.activity_main);
         goToFirstPage=new Intent(Authentication.this,FirstPage.class);
 
@@ -79,6 +80,9 @@ public class Authentication extends AppCompatActivity {
                 FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
                 //show email on toast
                 Toast.makeText(this,""+user.getEmail(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, ""+user.getPhoneNumber(), Toast.LENGTH_SHORT).show();
+                //ref.child(user.getUid()).setValue(user.getEmail());
+                //ref.child(user.getUid()).setValue(user.getPhoneNumber());
                 GoToFirstPage();
             }
             else{

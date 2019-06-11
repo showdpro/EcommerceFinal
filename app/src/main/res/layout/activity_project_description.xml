@@ -154,7 +154,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/temp_user_mobile"
-                    android:inputType="textPhonetic"
+                    android:inputType="phone"
                     android:textSize="15sp"
                     android:hint="@string/mob_number"/>
             </android.support.design.widget.TextInputLayout>
@@ -266,6 +266,7 @@
 
 
             <LinearLayout
+                android:id="@+id/Save_Button"
                 android:layout_width="166dp"
                 android:layout_height="50dp"
                 android:background="@drawable/button_outline"
