@@ -20,6 +20,7 @@
     <string name="template_price"><strike>₹1200</strike></string>
     <string name="template_dicount_price">₹960</string>
     <string name="template_dicount_percent">(20% OFF)</string>
+    <string name="save">Save</string>
     <string name="cart">Cart</string>
     <string name="website">Website</string>
     <string name="instagram">Instagram</string>
