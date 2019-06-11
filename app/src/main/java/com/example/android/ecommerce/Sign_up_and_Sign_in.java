@@ -6,6 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.google.firebase.database.FirebaseDatabase;
+
+import org.w3c.dom.Text;
+
 public class Sign_up_and_Sign_in extends AppCompatActivity {
     Button SignIn,SignUp;
     Intent tSignUp;
@@ -17,7 +21,7 @@ public class Sign_up_and_Sign_in extends AppCompatActivity {
         SignIn=(Button)findViewById(R.id.button_sign_in);
         tSignUp=new Intent(Sign_up_and_Sign_in.this,Authentication.class);
         setContentView(R.layout.activity_sign_up_and__sign_in);
-        tSignIn=new Intent(Sign_up_and_Sign_in.this,FirstPage.class);
+        tSignIn=new Intent(Sign_up_and_Sign_in.this, FirstPage.class);
     }
     public void toSignUp(View view)
     {
