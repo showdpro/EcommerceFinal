@@ -64,4 +64,10 @@
     <string name="home">Home</string>
     <string name="office">Office/Commercial</string>
     <string name="default_address">Make this my default address</string>
+    <string name="default_web_client_id" translatable="false">265565191534-5tss8r08gpe0q41ie9mmrgdv5lp7i71e.apps.googleusercontent.com</string>
+    <string name="prod_brand">Brand</string>
+    <string name="prod_name">Name</string>
+    <string name="prod_price">Price</string>
+    <string name="prod_mrp">mrp</string>
+    <string name="prod_discount">disc</string>
 </resources>
