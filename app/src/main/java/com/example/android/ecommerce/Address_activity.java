@@ -31,7 +31,7 @@ public class Address_activity extends AppCompatActivity {
         int locality=editText5.getText().toString().trim().length();
         int city=editText6.getText().toString().trim().length();
         int state=editText7.getText().toString().trim().length();
-        //hi
+
 
         textInput1=findViewById(R.id.text_layout_name);
         textInput2=findViewById(R.id.text_layout_phn);

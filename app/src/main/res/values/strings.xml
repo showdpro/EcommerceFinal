@@ -15,12 +15,17 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
 
-    <string name="top1">White Striped Dress</string>
-    <string name="top1_brand">HERE&amp;NOW</string>
-    <string name="top1_price"><strike>₹1200</strike></string>
-    <string name="top1_dicount_price">₹960</string>
-    <string name="top1_dicount_percent">(20% OFF)</string>
+    <string name="template">Template 1</string>
+    <string name="template_brand">Template Brand</string>
+    <string name="template_price"><strike>₹1200</strike></string>
+    <string name="template_dicount_price">₹960</string>
+    <string name="template_dicount_percent">(20% OFF)</string>
     <string name="cart">Cart</string>
+    <string name="website">Website</string>
+    <string name="instagram">Instagram</string>
+    <string name="facebook">Facebook</string>
+    <string name="designation">Designation</string>
+    <string name="work_type">Work Type</string>
     <string name="wishlist">Wishlist</string>
     <string name="add_cart">Cart</string>
     <string name="size_xs">XS</string>
@@ -69,4 +74,15 @@
     <string name="prod_price">Price</string>
     <string name="prod_mrp">mrp</string>
     <string name="prod_discount">disc</string>
+    <string name="mob_number">Mobile Number</string>
+    <string name="email">Email Id</string>
+    <string name="adres">My Address</string>
+    <string name="change_pswrd">Change Password</string>
+    <string name="edit">Edit</string>
+    <string name="close">Close</string>
+    <string name="update">Update</string>
+    <string name="change_profile">Change Profile</string>
+    <string name="new_user_sign_up">New User Sign Up</string>
+
+
 </resources>
