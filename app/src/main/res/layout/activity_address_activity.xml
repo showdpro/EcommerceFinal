@@ -7,6 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".Address_activity"
+    android:background="@drawable/gradient3"
     android:padding="10dp">
 
     <android.support.v7.widget.CardView
