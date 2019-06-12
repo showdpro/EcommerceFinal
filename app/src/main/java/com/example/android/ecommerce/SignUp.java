@@ -29,11 +29,13 @@ public class SignUp extends AppCompatActivity {
     TextView showpass;
     Button CreateAcc;
     ProgressDialog loadingBar;
+    FirebaseDatabase userDatabase;
+    DatabaseReference ref;
 
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
@@ -44,25 +46,17 @@ public class SignUp extends AppCompatActivity {
         showpass=(TextView)findViewById(R.id.showpass);
         CreateAcc=(Button)findViewById(R.id.createAcc);
         loadingBar= new ProgressDialog(this);
-        CreateAcc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CreateAcc();
 
-            }
-        });
     }
 
-    private void CreateAcc()
+    public void Ca(View view)
     {
 
-        String nam,mnum;
-        nam = name.getText().toString();
-        mnum=monum.getText().toString();
+
         //pass=password.getText().toString();
         //cpass=cpassword.getText().toString();
 
-        if(TextUtils.isEmpty(nam))
+        /*if(TextUtils.isEmpty(nam))
         {
             Toast.makeText(this, "Enter The Name", Toast.LENGTH_SHORT).show();
 
@@ -82,18 +76,18 @@ public class SignUp extends AppCompatActivity {
         else if(!(pass.equals(cpass)))
         {
             Toast.makeText(this, "Please Enter the password again", Toast.LENGTH_SHORT).show();
-        }*/
+        }
         else
         {
             loadingBar.setTitle("Creating Account");
             loadingBar.setMessage("Please Wait");
             loadingBar.setCanceledOnTouchOutside(false);
-            loadingBar.show();
+            loadingBar.show();*/
 
-            AddAcc(nam,mnum);
-        }
-
+           // AddAcc(nam,mnum);
     }
+
+
 
     private void AddAcc(final String nam, final String mnum)
     {

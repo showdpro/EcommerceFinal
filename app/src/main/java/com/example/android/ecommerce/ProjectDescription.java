@@ -38,11 +38,12 @@ public class ProjectDescription extends AppCompatActivity {
 
     FirebaseDatabase userInfo=FirebaseDatabase.getInstance();
     DatabaseReference Mainref=userInfo.getReference();
+    DatabaseReference Existing_value=userInfo.getReference();
     FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
     ProgressDialog loadingBar;
     HashMap<String,Object>userInfomap=new HashMap<>();
     UserInfoForDatabase userClass;
-
+    String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +78,31 @@ public class ProjectDescription extends AppCompatActivity {
         textInput9 = findViewById(R.id.text_layout_work_type);
         loadingBar=new ProgressDialog(this);
         userClass=new UserInfoForDatabase();
+        editText1.setText(name);
+        loadingBar.setTitle("Checking for previous Data");
+        loadingBar.setMessage("Plaese Wait..");
+        loadingBar.show();
+
+        Mainref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+               if((dataSnapshot.child("UserInfo").child(user.getUid()).exists()))
+               {
+                   putValuesInEditText(dataSnapshot);
+               }
+               else
+               {
+                   Toast.makeText(ProjectDescription.this, "No Existing Data Found", Toast.LENGTH_SHORT).show();
+                   loadingBar.dismiss();
+               }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -158,8 +184,8 @@ public class ProjectDescription extends AppCompatActivity {
         userClass.setWorktype(work_type);
         Mainref.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                Mainref.child(uid).setValue(userClass)
+            public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
+                Mainref.child("UserInfo").child(uid).setValue(userClass)
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
@@ -167,6 +193,7 @@ public class ProjectDescription extends AppCompatActivity {
                                 {
                                     Toast.makeText(ProjectDescription.this, "Saved Successfully", Toast.LENGTH_SHORT).show();
                                     loadingBar.dismiss();
+                                    //putValuesInEditText(dataSnapshot);
                                 }
                                 else
                                 {
@@ -178,12 +205,35 @@ public class ProjectDescription extends AppCompatActivity {
 
             }
 
+
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
 
+    }
+
+    private void putValuesInEditText(@org.jetbrains.annotations.NotNull DataSnapshot dataSnapshot) {
+        for(DataSnapshot ds:dataSnapshot.getChildren())
+        {
+            userClass.setName(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getName());
+            userClass.setPhone(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getPhone());
+            userClass.setAddress(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getAddress());
+            userClass.setEmail(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getEmail());
+            userClass.setWebsite(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getWebsite());
+            userClass.setDesignation(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getDesignation());
+            userClass.setWorktype(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getWorktype());
+
+            editText1.setText(userClass.getName().toString());
+            editText2.setText(userClass.getPhone().toString());
+            editText3.setText(userClass.getAddress().toString());
+            editText4.setText(userClass.getEmail().toString());
+            editText5.setText(userClass.getWebsite().toString());
+            editText8.setText(userClass.getDesignation().toString());
+            editText9.setText(userClass.getWorktype().toString());
+            loadingBar.dismiss();
+        }
     }
 
 }
