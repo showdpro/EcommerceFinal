@@ -3,6 +3,7 @@ package com.example.android.ecommerce.ViewHolder;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -11,33 +12,37 @@ import com.example.android.ecommerce.R;
 
 public class product_view_holder extends RecyclerView.ViewHolder implements View.OnClickListener
 {
-    public TextView product_brand1, product_brand2, product_name1, product_name2, product_price1, product_price2,
-            product_mrp1, product_mrp2, product_discount1, product_discount2;
+    private TextView product_brand, product_name, product_price,
+            product_mrp, product_discount;
 
-    public ImageView imageView1, imageView2;
+    private ImageView imageView;
 
-    public ItemClickListener listener;
+    private ItemClickListener listener;
+
+    private Button button;
 
     public product_view_holder(@NonNull View itemView) {
         super(itemView);
 
-        imageView1= itemView.findViewById(R.id.product_image_1);
-        imageView2= itemView.findViewById(R.id.product_image_2);
+        imageView= itemView.findViewById(R.id.product_image);
 
-        product_brand1= itemView.findViewById(R.id.product_brand_grid_1);
-        product_brand2= itemView.findViewById(R.id.product_brand_grid_2);
 
-        product_name1= itemView.findViewById(R.id.product_name_grid_1);
-        product_name2= itemView.findViewById(R.id.product_name_grid_2);
+        product_brand= itemView.findViewById(R.id.product_brand);
 
-        product_price1= itemView.findViewById(R.id.product_price_1);
-        product_price2= itemView.findViewById(R.id.product_price_2);
 
-        product_mrp1= itemView.findViewById(R.id.product_mrp_grid_1);
-        product_mrp2= itemView.findViewById(R.id.product_mrp_grid_2);
+        product_name= itemView.findViewById(R.id.product_name);
 
-        product_discount1= itemView.findViewById(R.id.product_discount_grid_1);
-        product_discount2= itemView.findViewById(R.id.product_discount_grid_2);
+
+        product_price= itemView.findViewById(R.id.product_price);
+
+
+        product_mrp= itemView.findViewById(R.id.product_mrp);
+
+
+        product_discount= itemView.findViewById(R.id.product_discount_grid_1);
+
+        button=itemView.findViewById(R.id.product_buy_button);
+
 
     }
 

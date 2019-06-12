@@ -11,23 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Wishlist"></activity>
-        <activity android:name=".Authentication" />
-        <activity android:name=".MyAccount" />
+        <activity android:name=".Details"></activity>
         <activity
-            android:name=".Address_activity"
+            android:name=".Wishlist"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SettingActivity"
+            android:name=".Authentication"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MyAccount"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Sign_up_and_Sign_in"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ProjectDescription"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".SignUp"
             android:screenOrientation="portrait" />
         <activity
             android:name=".FirstPage"
