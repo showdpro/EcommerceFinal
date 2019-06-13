@@ -185,8 +185,8 @@ public class ProjectDescription extends AppCompatActivity {
         final String Name = editText1.getText().toString();
         final String phone = editText2.getText().toString();
         final String address = editText3.getText().toString();
-        final String city = editText4.getText().toString();
-        final String state = editText5.getText().toString();
+//        final String city = editText4.getText().toString();
+//        final String state = editText5.getText().toString();
         final String email = editText6.getText().toString();
         final String website = editText7.getText().toString();
 //        final String instagram=editText8.getText().toString().trim().length();
