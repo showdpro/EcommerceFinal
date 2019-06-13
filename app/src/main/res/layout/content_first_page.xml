@@ -39,11 +39,11 @@
                         android:layout_width="122dp"
                         android:layout_height="100dp"
                         android:clickable="true"
-                        android:contentDescription="@string/women"
+
                         android:focusable="true"
 
                         android:scaleType="centerCrop"
-                        android:src="@drawable/women_image" />
+                       />
 
                     <TextView
                         android:id="@+id/women_text"
@@ -51,7 +51,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/women_image"
                         android:layout_centerHorizontal="true"
-                        android:text="@string/women"
+
                         android:textAllCaps="true"
                         android:textColor="#000"
                         android:textSize="20sp"
@@ -78,11 +78,11 @@
                         android:layout_width="122dp"
                         android:layout_height="100dp"
                         android:clickable="true"
-                        android:contentDescription="@string/women"
+                        android:contentDescription=""
                         android:focusable="true"
 
                         android:scaleType="centerCrop"
-                        android:src="@drawable/men_image" />
+                       />
 
                     <TextView
                         android:id="@+id/men_text"
@@ -90,7 +90,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/men_image"
                         android:layout_centerHorizontal="true"
-                        android:text="@string/men"
+
                         android:textAllCaps="true"
                         android:textColor="#000"
                         android:textSize="20sp"
@@ -115,11 +115,11 @@
                         android:layout_width="122dp"
                         android:layout_height="100dp"
                         android:clickable="true"
-                        android:contentDescription="@string/women"
+
                         android:focusable="true"
 
                         android:scaleType="centerCrop"
-                        android:src="@drawable/kids_image" />
+                        />
 
                     <TextView
                         android:id="@+id/kids_text"
@@ -127,7 +127,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/kids_image"
                         android:layout_centerHorizontal="true"
-                        android:text="@string/kids"
+
                         android:textAllCaps="true"
                         android:textColor="#000"
                         android:textSize="20sp"
@@ -153,11 +153,11 @@
 
                 <ImageView
                     android:id="@+id/pager_1_image_western_women"
-                    android:layout_width="100dp"
+                    android:layout_width="150dp"
                     android:layout_height="300dp"
-                    android:contentDescription="@string/western_wear"
+
                     android:scaleType="centerCrop"
-                    android:src="@drawable/women_western" />
+                     />
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/pager_1_card_women_amazing_western"
@@ -178,7 +178,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/rambla_bold"
-                            android:text="@string/amazing_offers"
+
                             android:textAllCaps="true"
                             android:textColor="#222222"
                             android:textSize="25sp" />
@@ -187,7 +187,7 @@
                             android:id="@+id/pager_1_card_text2_women_western"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/western_wear"
+
                             android:textColor="#222222"
                             android:textSize="18sp" />
 
@@ -216,12 +216,12 @@
 
                 <ImageView
                     android:id="@+id/pager_2_image_women_ethnic"
-                    android:layout_width="100dp"
+                    android:layout_width="150dp"
                     android:layout_height="300dp"
-                    android:contentDescription="@string/ethnic_wear"
+
                     android:scaleType="centerCrop"
 
-                    android:src="@drawable/women_ethnic" />
+                    />
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/pager_2_card_women_ethnic"
@@ -242,7 +242,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/rambla_bold"
-                            android:text="@string/trending"
+
                             android:textAllCaps="true"
                             android:textColor="#222222"
                             android:textSize="25sp" />
@@ -251,7 +251,7 @@
                             android:id="@+id/pager_2_card_text2_ethnic_women"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/ethnic_wear"
+
                             android:textColor="#222222"
                             android:textSize="18sp" />
 
@@ -283,9 +283,9 @@
                     android:layout_width="100dp"
                     android:layout_height="300dp"
                     android:layout_marginStart="10dp"
-                    android:contentDescription="@string/footwear"
+
                     android:scaleType="centerCrop"
-                    android:src="@drawable/women_footwear" />
+                />
 
                 <android.support.v7.widget.CardView
                     android:id="@+id/pager_2_women_card_foot"
@@ -306,7 +306,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/rambla_bold"
-                            android:text="@string/footwear"
+
                             android:textAllCaps="true"
                             android:textColor="#131313"
                             android:textSize="25sp" />
@@ -315,7 +315,7 @@
                             android:id="@+id/pager_2_women_card_text2_foot_women"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/define"
+
                             android:textColor="#222222"
                             android:textSize="18sp" />
 
@@ -351,9 +351,8 @@
                 android:id="@+id/pager_1_image_western_men"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:contentDescription="@string/western_wear"
-                android:scaleType="centerCrop"
-                android:src="@drawable/men_western" />
+
+                android:scaleType="centerCrop" />
 
             <android.support.v7.widget.CardView
                 android:id="@+id/pager_1_men_card_"
@@ -373,7 +372,7 @@
                         android:id="@+id/pager_1_men_card_text1_western_wear"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/western_wear"
+                        android:text=""
                         android:fontFamily="@font/rambla_bold"
                         android:textAllCaps="true"
                         android:textColor="#131313"
@@ -383,7 +382,7 @@
                         android:id="@+id/pager_1_men_card_text2_western_men"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/swag"
+                        android:text=""
                         android:textColor="#222222"
                         android:textSize="18sp" />
 
@@ -417,9 +416,9 @@
                 android:id="@+id/pager_2_image_western_men"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:contentDescription="@string/ethnic_wear"
+
                 android:scaleType="centerCrop"
-                android:src="@drawable/men_ethnic" />
+                />
 
             <android.support.v7.widget.CardView
                 android:id="@+id/pager_2_men_card_"
@@ -439,7 +438,7 @@
                         android:id="@+id/pager_3_men_card_text1_ethnic_wear"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/ethnic_wear"
+                        android:text=""
                         android:fontFamily="@font/rambla_bold"
                         android:textAllCaps="true"
                         android:textColor="#131313"
@@ -449,7 +448,7 @@
                         android:id="@+id/pager_2_men_card_text2_ethnic_men"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/ethnic_charm"
+                        android:text=""
                         android:textColor="#222222"
                         android:textSize="18sp" />
 
@@ -483,9 +482,9 @@
                 android:id="@+id/pager_1_image_foot_men"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:contentDescription="@string/footwear"
+
                 android:scaleType="centerCrop"
-                android:src="@drawable/men_foot" />
+                />
 
             <android.support.v7.widget.CardView
                 android:id="@+id/pager_3_men_card_"
@@ -505,7 +504,7 @@
                         android:id="@+id/pager_3_men_card_text1_foot_wear"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/footwear"
+                        android:text=""
                         android:fontFamily="@font/rambla_bold"
                         android:textAllCaps="true"
                         android:textColor="#131313"
@@ -515,7 +514,7 @@
                         android:id="@+id/pager_3_men_card_text2_foot_men"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/foot_tag_line"
+                        android:text=""
                         android:textColor="#222222"
                         android:textSize="18sp" />
 
@@ -547,9 +546,9 @@
                 android:id="@+id/pager_1_kids_image"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
-                android:contentDescription="@string/western_wear"
+
                 android:scaleType="centerCrop"
-                android:src="@drawable/kids_western" />
+              />
 
             <android.support.v7.widget.CardView
                 android:layout_width="wrap_content"
@@ -568,7 +567,7 @@
                         android:id="@+id/pager_1_kids_card_text1_western_wear"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/western_wear"
+                        android:text=""
                         android:textAllCaps="true"
                         android:textColor="#131313"
                         android:fontFamily="@font/rambla_bold"
@@ -578,7 +577,7 @@
                         android:id="@+id/pager_1_kids_card_text2_western"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/foot_tag_line"
+                        android:text=""
                         android:textColor="#222222"
                         android:textSize="15sp" />
 
@@ -598,139 +597,138 @@
             </android.support.v7.widget.CardView>
 
         </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:id="@+id/relative_layout_2_kids_foot">
+
+            <ImageView
+                android:id="@+id/pager_2_kids_image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+
+                android:scaleType="centerCrop"
+             />
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toEndOf="@+id/pager_2_kids_image">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/pager_1_kids_card_text1_foot_wear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textAllCaps="true"
+                        android:textColor="#131313"
+                        android:fontFamily="@font/rambla_bold"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/pager_1_kids_card_text2_foot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textColor="#222222"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:id="@+id/pager_1_kids_card_text3_foot_shop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/rajdhani_medium"
+                        android:text="@string/get_now"
+                        android:textAllCaps="true"
+                        android:textColor="#3F3E3E"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp">
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:id="@+id/relative_layout_3_kids_ethnic">
 
+            <ImageView
+                android:id="@+id/pager_3_kids_image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                 />
 
-            <LinearLayout
-                android:id="@+id/linear_layout_2_kids_foot"
+            <android.support.v7.widget.CardView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:layout_height="200dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_toEndOf="@+id/pager_3_kids_image">
 
-                <ImageView
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:contentDescription="@string/foot_kids"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/kids_foot" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="-30dp">
+                    <TextView
+                        android:id="@+id/pager_1_kids_card_text1_ethnic_wear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="10dp">
+                        android:textAllCaps="true"
+                        android:textColor="#131313"
+                        android:fontFamily="@font/rambla_bold"
+                        android:textSize="20sp" />
 
-                        <TextView
-                            android:id="@+id/pager_3_kids_card_text1_foot"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/footwear"
-                            android:textAllCaps="true"
-                            android:textColor="#131313"
-                            android:fontFamily="@font/rambla_bold"
-                            android:textSize="18sp" />
+                    <TextView
+                        android:id="@+id/pager_1_kids_card_text2_ethnic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
-                        <TextView
-                            android:id="@+id/pager_3_kids_card_text2_foot"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/foot_kids"
-                            android:textColor="#222222"
-                            android:textSize="15sp" />
+                        android:textColor="#222222"
+                        android:textSize="15sp" />
 
 
-                        <TextView
-                            android:id="@+id/pager_3_kids_card_text3_foot_shop"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="@font/rajdhani_medium"
-                            android:text="@string/get_now"
-                            android:textAllCaps="true"
-                            android:textColor="#3F3E3E"
-                            android:textSize="15sp" />
+                    <TextView
+                        android:id="@+id/pager_1_kids_card_text3_ethnic_shop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/rajdhani_medium"
+                        android:text="@string/shop_now"
+                        android:textAllCaps="true"
+                        android:textColor="#3F3E3E"
+                        android:textSize="15sp" />
+                </LinearLayout>
 
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linear_layout_1_kids_ethnic"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toEndOf="@id/linear_layout_2_kids_foot"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:contentDescription="@string/ethnic_kids"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/kids_ethnic" />
-
-                <android.support.v7.widget.CardView
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="-30dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
-                        <TextView
-                            android:id="@+id/pager_2_kids_card_text1_ethnic"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/ethnic_wear"
-                            android:textAllCaps="true"
-                            android:fontFamily="@font/rambla_bold"
-                            android:textColor="#131313"
-                            android:textSize="18sp" />
-
-                        <TextView
-                            android:id="@+id/pager_2_kids_card_text2_ethnic"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/ethnic_kids"
-                            android:textColor="#222222"
-                            android:textSize="15sp" />
-
-
-                        <TextView
-                            android:id="@+id/pager_2_kids_card_text3_ethnic_shop"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="@font/rajdhani_medium"
-                            android:text="@string/shop_now"
-                            android:textAllCaps="true"
-                            android:textColor="#3F3E3E"
-                            android:textSize="15sp" />
-
-
-                    </LinearLayout>
-
-                </android.support.v7.widget.CardView>
-
-            </LinearLayout>
+            </android.support.v7.widget.CardView>
 
         </RelativeLayout>
+
+
+
+
+
+
+
 
     </LinearLayout>
 </ScrollView>

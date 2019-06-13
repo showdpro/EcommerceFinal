@@ -2,6 +2,7 @@ package com.example.android.ecommerce;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -14,11 +15,17 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Toast;
+
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 
 public class FirstPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     Intent tSettings;
     Intent tSignInSignUp;
+    Intent Test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +41,8 @@ public class FirstPage extends AppCompatActivity
                         .setAction("Action", null).show();
             }
         });
-        tSettings=new Intent(FirstPage.this,SettingActivity.class);
         tSignInSignUp=new Intent(FirstPage.this,Sign_up_and_Sign_in.class);
+        Test=new Intent(this,ProjectDescription.class);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -106,7 +113,10 @@ public class FirstPage extends AppCompatActivity
         }
         else if (id == R.id.nav_My_order)
         {
+
            Intent order= new Intent(FirstPage.this,MyOrders.class);
+
+        startActivity(Test);
         }
         else if (id == R.id.nav_My_cart)
         {
@@ -114,6 +124,20 @@ public class FirstPage extends AppCompatActivity
         }
         else if (id == R.id.nav_logout)
         {
+            AuthUI.getInstance().signOut(FirstPage.this)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if(task.isSuccessful())
+                            {
+                                Toast.makeText(FirstPage.this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
+                            }
+                            else
+                            {
+                                Toast.makeText(FirstPage.this, "Error", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
             startActivity(tSignInSignUp);
         }
         else if (id == R.id.nav_rate_us)

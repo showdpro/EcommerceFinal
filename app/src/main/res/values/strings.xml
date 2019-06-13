@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Ecommerce</string>
+    <string name="app_name">So Called Shopping App</string>
     <string name="title_activity_first_page">Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -39,42 +39,25 @@
     <string name="go_to_profile">GO TO PROFILE</string>
     <string name="logout">Logout</string>
 
-    <string name="top1">White Striped Dress</string>
-    <string name="top1_brand">HERE&amp;NOW</string>
-    <string name="top1_price"><strike>₹1200</strike></string>
-    <string name="top1_dicount_price">₹960</string>
-    <string name="top1_dicount_percent">(20% OFF)</string>
+    <string name="template">Template 1</string>
+    <string name="template_brand">Template Brand</string>
+
+    <string name="save">Save</string>
     <string name="cart">Cart</string>
+    <string name="website">Website</string>
+    <string name="instagram">Instagram</string>
+    <string name="facebook">Facebook</string>
+    <string name="linked_in">LinkedIn</string>
+    <string name="designation">Designation*</string>
+    <string name="profession">Profession*</string>
     <string name="wishlist">Wishlist</string>
     <string name="add_cart">Cart</string>
-    <string name="size_xs">XS</string>
-    <string name="size_s">S</string>
-    <string name="size_m">M</string>
-    <string name="size_l">L</string>
-    <string name="size_xl">XL</string>
-    <string name="size_xxl">XXL</string>
-    <string name="select_size">select size</string>
-    <string name="size_chart">size chart</string>
-    <string name="return_days">Easy 30 days returns and exchanges</string>
-    <string name="return_days_describe">Choose to return or exchange for a different size(if available) within 30 days</string>
-    <string name="women">Women</string>
-    <string name="men">Men</string>
-    <string name="kids">Kids</string>
-    <string name="amazing_offers">Amazing offers</string>
-    <string name="western_wear">Western Wear</string>
+    <string name="buy">Buy</string>
+
+
     <string name="get_now">GET NOW+</string>
     <string name="shop_now">SHOP+</string>
-    <string name="trending">THE ETHNIC EDIT</string>
-    <string name="ethnic_tag_line">Channel your <italic>Desi</italic> Avatar with Trendy <italic>Kurtas and Sarees</italic></string>
-    <string name="footwear">Footwear</string>
-    <string name="define">They Define You</string>
-    <string name="special_occasions">For Your Special Occasions</string>
-    <string name="swag">Shake Up your Wardrobe with some extra <italic>Swag</italic></string>
-    <string name="ethnic_charm">Add <italic>Charm</italic> to those Special Occasions</string>
-    <string name="foot_tag_line">Life can be Boring but not your Shoes</string>
-    <string name="ethnic_kids">Fancy Wear for your Li\'l ones</string>
-    <string name="foot_kids">Fashion footwear to comfort your Li\'l ones</string>
-    <string name="ethnic_wear">Ethnic Wear</string>
+
     <string name="sign_in">sign in</string>
     <string name="sign_up">sign up</string>
     <string name="Name">Name*</string>
@@ -94,4 +77,15 @@
     <string name="prod_price">Price</string>
     <string name="prod_mrp">mrp</string>
     <string name="prod_discount">disc</string>
+    <string name="mob_number">Mobile Number</string>
+    <string name="email1">Email Id*</string>
+    <string name="adres">My Address</string>
+    <string name="change_pswrd">Change Password</string>
+    <string name="edit">Edit</string>
+    <string name="close">Close</string>
+    <string name="update">Update</string>
+    <string name="change_profile">Change Profile</string>
+    <string name="new_user_sign_up">New User Sign Up</string>
+
+
 </resources>
