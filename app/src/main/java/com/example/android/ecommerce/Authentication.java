@@ -37,33 +37,12 @@ public class Authentication extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-<<<<<<< HEAD
         setContentView(R.layout.activity_authentication);
-        btn_sign_out=(Button)findViewById(R.id.btn_sign_out);
-        btn_sign_out.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //LogOut
-                AuthUI.getInstance().signOut(Authentication.this)
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                btn_sign_out.setEnabled(false);
-                                showSignInOptions();
-                            }
-                        }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(Authentication.this,""+e.getMessage(),Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
-        });
 
-=======
+
         setContentView(R.layout.activity_main);
         goToFirstPage=new Intent(Authentication.this,FirstPage.class);
->>>>>>> 8661fc2afc68961ee01e93e8d73656fe5eef81b7
+
 
         //Init provider
         providers= Arrays.asList(

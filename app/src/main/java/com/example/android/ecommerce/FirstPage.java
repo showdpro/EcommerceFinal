@@ -89,7 +89,8 @@ public class FirstPage extends AppCompatActivity
         }
         else if (id == R.id.nav_my_account)
         {
-
+           Intent account= new Intent(FirstPage.this,MyAccount.class);
+           startActivity(account);
         }
         else if (id == R.id.nav_wishlist)
         {
@@ -105,7 +106,7 @@ public class FirstPage extends AppCompatActivity
         }
         else if (id == R.id.nav_My_order)
         {
-
+           Intent order= new Intent(FirstPage.this,MyOrders.class);
         }
         else if (id == R.id.nav_My_cart)
         {

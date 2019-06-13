@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT=2500;
+    private static int SPLASH_TIME_OUT=1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
