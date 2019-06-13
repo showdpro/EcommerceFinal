@@ -31,10 +31,10 @@ public class ProjectDescription extends AppCompatActivity {
     ImageView iconCart;
     TextView ProductBrand, ProductName, ProductPrice, ProductMRP, ProductDiscount;
     TextView WishList, Cart;
-    EditText editText1, editText2, editText3, editText4, editText5, editText6, editText7, editText8, editText9;
+    EditText editText1, editText2, editText3, editText4, editText5, editText6, editText7, editText8, editText9, editText10, editText11, editText12;
 
-    TextInputLayout textInput1, textInput2, textInput3, textInput4, textInput5, textInput6, textInput7, textInput8, textInput9;
-    LinearLayout save;
+    TextInputLayout textInput1, textInput2, textInput3, textInput4, textInput5, textInput6, textInput7, textInput8, textInput9, textInput10, textInput11, textInput12;
+    Button save;
 
     FirebaseDatabase userInfo=FirebaseDatabase.getInstance();
     DatabaseReference Mainref=userInfo.getReference();
@@ -54,27 +54,34 @@ public class ProjectDescription extends AppCompatActivity {
 
         ImageAdapter adapter = new ImageAdapter(this);
         viewpager.setAdapter(adapter);
-        save = (LinearLayout) findViewById(R.id.Save_Button);
+        save = (Button) findViewById(R.id.Save_Button);
 
         editText1 = findViewById(R.id.temp_user_name);
         editText2 = findViewById(R.id.temp_user_mobile);
         editText3 = findViewById(R.id.temp_user_address);
-        editText4 = findViewById(R.id.temp_user_email);
-        editText5 = findViewById(R.id.temp_user_website_url);
-//        editText6=findViewById(R.id.temp_user_instagram_url);
-//        editText7=findViewById(R.id.temp_user_facebook_url);
-        editText8 = findViewById(R.id.temp_user_designation);
-        editText9 = findViewById(R.id.temp_user_work_type);
+        editText4 = findViewById(R.id.temp_user_city);
+        editText5 = findViewById(R.id.temp_user_state);
+        editText6 = findViewById(R.id.temp_user_email);
+        editText7 = findViewById(R.id.temp_user_website_url);
+        editText8=findViewById(R.id.temp_user_instagram_url);
+        editText9=findViewById(R.id.temp_user_facebook_url);
+        editText10 = findViewById(R.id.temp_user_linked_in_url);
+        editText11 = findViewById(R.id.temp_user_designation);
+        editText12 = findViewById(R.id.temp_user_work_type);
 
         textInput1 = findViewById(R.id.text_layout_name);
         textInput2 = findViewById(R.id.text_layout_mobile);
         textInput3 = findViewById(R.id.text_layout_address);
-        textInput4 = findViewById(R.id.text_layout_email);
-        textInput5 = findViewById(R.id.text_layout_website_url);
-//        textInput6=findViewById(R.id.text_layout_instagram_url);
-//        textInput7=findViewById(R.id.text_layout_facebook_url);
-        textInput8 = findViewById(R.id.text_layout_designation);
-        textInput9 = findViewById(R.id.text_layout_work_type);
+        textInput4 = findViewById(R.id.text_layout_city);
+        textInput5 = findViewById(R.id.text_layout_state);
+        textInput6 = findViewById(R.id.text_layout_email);
+        textInput7 = findViewById(R.id.text_layout_website_url);
+        textInput8=findViewById(R.id.text_layout_instagram_url);
+        textInput9=findViewById(R.id.text_layout_facebook_url);
+        textInput10 = findViewById(R.id.text_layout_linked_in_url);
+        textInput11 = findViewById(R.id.text_layout_designation);
+        textInput12 = findViewById(R.id.text_layout_work_type);
+
         loadingBar=new ProgressDialog(this);
         userClass=new UserInfoForDatabase();
         save.setOnClickListener(new View.OnClickListener() {
@@ -91,16 +98,15 @@ public class ProjectDescription extends AppCompatActivity {
         int Name = editText1.getText().toString().trim().length();
         int phone = editText2.getText().toString().trim().length();
         int address = editText3.getText().toString().trim().length();
-        int email = editText4.getText().toString().trim().length();
-        int website = editText5.getText().toString().trim().length();
-//        int instagram=editText6.getText().toString().trim().length();
-//        int facebook=editText7.getText().toString().trim().length();
-        int designation = editText8.getText().toString().trim().length();
-        int work_type = editText9.getText().toString().trim().length();
+        int city = editText4.getText().toString().trim().length();
+        int state = editText5.getText().toString().trim().length();
+        int email = editText6.getText().toString().trim().length();
+        int designation = editText11.getText().toString().trim().length();
+        int work_type = editText12.getText().toString().trim().length();
 
         int flag = 0;
 
-            if (Name == 0 || phone == 0 || address == 0 || email == 0 || designation == 0 || work_type == 0) {
+            if (Name == 0 || phone == 0 || address == 0 ||city==0||state==0|| email == 0 || designation == 0 || work_type == 0) {
                 if (Name == 0) {
                     textInput1.setError("This field needs to be filled");
 
@@ -110,21 +116,32 @@ public class ProjectDescription extends AppCompatActivity {
 
                     textInput2.setError("This field needs to be filled");
                 }
-                if (address == 0) {
+                if (address == 0)
+                {
 
                     textInput3.setError("This field needs to be filled");
                 }
-                if (email == 0) {
+
+                if (city == 0) {
 
                     textInput4.setError("This field needs to be filled");
                 }
+
+                if (state == 0) {
+
+                    textInput5.setError("This field needs to be filled");
+                }
+                if (email == 0) {
+
+                    textInput6.setError("This field needs to be filled");
+                }
                 if (designation == 0) {
 
-                    textInput8.setError("This field needs to be filled");
+                    textInput11.setError("This field needs to be filled");
                 }
                 if (work_type == 0) {
 
-                    textInput9.setError("This field needs to be filled");
+                    textInput12.setError("This field needs to be filled");
                 }
             }
             else
@@ -142,12 +159,15 @@ public class ProjectDescription extends AppCompatActivity {
         final String Name = editText1.getText().toString();
         final String phone = editText2.getText().toString();
         final String address = editText3.getText().toString();
-        final String email = editText4.getText().toString();
-        final String website = editText5.getText().toString();
-//        final String instagram=editText6.getText().toString().trim().length();
-//        final String facebook=editText7.getText().toString().trim().length();
-        final String designation = editText8.getText().toString();
-        final String work_type = editText9.getText().toString();
+        final String city = editText4.getText().toString();
+        final String state = editText5.getText().toString();
+        final String email = editText6.getText().toString();
+        final String website = editText7.getText().toString();
+//        final String instagram=editText8.getText().toString().trim().length();
+//        final String facebook=editText9.getText().toString().trim().length();
+//        final String linked_in=editText10.getText().toString().trim().length();
+        final String designation = editText11.getText().toString();
+        final String work_type = editText12.getText().toString();
         final String uid=user.getUid().toString();
         userClass.setName(Name);
         userClass.setPhone(phone);
