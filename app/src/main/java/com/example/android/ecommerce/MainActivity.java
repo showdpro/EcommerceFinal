@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AuthUI.getInstance().signOut(this);
         final ImageView logo=(ImageView)findViewById(R.id.logo);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
