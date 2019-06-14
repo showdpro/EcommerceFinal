@@ -17,6 +17,7 @@ public class MyAccount extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_account);
+<<<<<<< HEAD
         order=findViewById(R.id.myorders);
 
         order.setOnClickListener(new View.OnClickListener() {
@@ -27,6 +28,8 @@ public class MyAccount extends AppCompatActivity{
                 startActivity(myOrder);
             }
         });
+=======
+>>>>>>> f5035e597a17be4d6e5bb82b1876318b4e5c4b7e
 
 
     }

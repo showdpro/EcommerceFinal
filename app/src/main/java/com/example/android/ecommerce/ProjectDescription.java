@@ -28,7 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 
 public class ProjectDescription extends AppCompatActivity {
-    ImageView iconCart;
+    //ImageView iconCart;
     TextView ProductBrand, ProductName, ProductPrice, ProductMRP, ProductDiscount;
     TextView WishList, Cart;
     EditText editText1, editText2, editText3, editText4, editText5, editText6, editText7, editText8, editText9, editText10, editText11, editText12;
@@ -48,13 +48,13 @@ public class ProjectDescription extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_project_description);
-        iconCart = findViewById(R.id.icon_cart);
+      //  iconCart = findViewById(R.id.icon_cart);
 
 
-        ViewPager viewpager = findViewById(R.id.temp_view_pager);
+        //ViewPager viewpager = findViewById(R.id.temp_view_pager);
 
-        ImageAdapter adapter = new ImageAdapter(this);
-        viewpager.setAdapter(adapter);
+        //ImageAdapter adapter = new ImageAdapter(this);
+        //viewpager.setAdapter(adapter);
         save = (Button) findViewById(R.id.Save_Button);
 
         editText1 = findViewById(R.id.temp_user_name);
@@ -83,9 +83,8 @@ public class ProjectDescription extends AppCompatActivity {
         textInput11 = findViewById(R.id.text_layout_designation);
         textInput12 = findViewById(R.id.text_layout_work_type);
 
-        loadingBar=new ProgressDialog(this);
+        loadingBar=new ProgressDialog(ProjectDescription.this);
         userClass=new UserInfoForDatabase();
-        editText1.setText(name);
         loadingBar.setTitle("Checking for previous Data");
         loadingBar.setMessage("Plaese Wait..");
         loadingBar.show();
@@ -185,21 +184,26 @@ public class ProjectDescription extends AppCompatActivity {
         final String Name = editText1.getText().toString();
         final String phone = editText2.getText().toString();
         final String address = editText3.getText().toString();
-//        final String city = editText4.getText().toString();
-//        final String state = editText5.getText().toString();
+        final String city = editText4.getText().toString();
+        final String state = editText5.getText().toString();
         final String email = editText6.getText().toString();
         final String website = editText7.getText().toString();
-//        final String instagram=editText8.getText().toString().trim().length();
-//        final String facebook=editText9.getText().toString().trim().length();
-//        final String linked_in=editText10.getText().toString().trim().length();
+        final String instagram=editText8.getText().toString();
+        final String facebook=editText9.getText().toString();
+        final String linked_in=editText10.getText().toString();
         final String designation = editText11.getText().toString();
         final String work_type = editText12.getText().toString();
         final String uid=user.getUid().toString();
         userClass.setName(Name);
         userClass.setPhone(phone);
         userClass.setAddress(address);
+        userClass.setCity(city);
+        userClass.setState(state);
         userClass.setEmail(email);
         userClass.setWebsite(website);
+        userClass.setInstagram(instagram);
+        userClass.setFacebook(facebook);
+        userClass.setLinkedIn(linked_in);
         userClass.setDesignation(designation);
         userClass.setWorktype(work_type);
         Mainref.addValueEventListener(new ValueEventListener() {
@@ -240,18 +244,29 @@ public class ProjectDescription extends AppCompatActivity {
             userClass.setName(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getName());
             userClass.setPhone(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getPhone());
             userClass.setAddress(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getAddress());
+            userClass.setCity(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getCity());
+            userClass.setState(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getState());
             userClass.setEmail(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getEmail());
             userClass.setWebsite(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getWebsite());
+            userClass.setInstagram(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getInstagram());
+            userClass.setFacebook(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getFacebook());
+            userClass.setLinkedIn(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getLinkedIn());
             userClass.setDesignation(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getDesignation());
             userClass.setWorktype(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getWorktype());
 
             editText1.setText(userClass.getName().toString());
             editText2.setText(userClass.getPhone().toString());
             editText3.setText(userClass.getAddress().toString());
-            editText4.setText(userClass.getEmail().toString());
-            editText5.setText(userClass.getWebsite().toString());
-            editText8.setText(userClass.getDesignation().toString());
-            editText9.setText(userClass.getWorktype().toString());
+            editText4.setText(userClass.getCity().toString());
+            editText5.setText(userClass.getState().toString());
+            editText6.setText(userClass.getEmail().toString());
+            editText7.setText(userClass.getWebsite().toString());
+            editText8.setText(userClass.getInstagram().toString());
+            editText9.setText(userClass.getFacebook().toString());
+            editText10.setText(userClass.getLinkedIn().toString());
+            editText11.setText(userClass.getDesignation().toString());
+            editText12.setText(userClass.getWorktype().toString());
+
             loadingBar.dismiss();
         }
     }
