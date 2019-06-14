@@ -19,11 +19,10 @@ public class Sign_up_and_Sign_in extends AppCompatActivity {
     int flag=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        setContentView(R.layout.activity_sign_up_and__sign_in);
         SignUp=(Button)findViewById(R.id.button_sign_up);
         SignIn=(Button)findViewById(R.id.button_sign_in);
         tSignUp=new Intent(Sign_up_and_Sign_in.this,Authentication.class);
-        setContentView(R.layout.activity_sign_up_and__sign_in);
         tSignIn=new Intent(Sign_up_and_Sign_in.this, FirstPage.class);
         if(flag==0);
         {
