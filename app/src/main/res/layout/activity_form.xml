@@ -63,11 +63,9 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/temp_brand"
                         android:layout_gravity="center_horizontal"
-
                         android:background="@android:color/transparent"
                         android:fontFamily="@font/rajdhani_medium"
                         android:text="@string/template"
-
                         android:textAllCaps="false"
                         android:textColor="@color/grey"
                         android:textSize="17sp"
