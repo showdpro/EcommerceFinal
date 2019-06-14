@@ -113,13 +113,10 @@ public class FirstPage extends AppCompatActivity
         }
         else if (id == R.id.nav_My_order)
         {
-<<<<<<< HEAD
-=======
 
            Intent order= new Intent(FirstPage.this,ProjectDescription.class);
 
         startActivity(Test);
->>>>>>> f5035e597a17be4d6e5bb82b1876318b4e5c4b7e
         }
         else if (id == R.id.nav_My_cart)
         {
@@ -141,6 +138,7 @@ public class FirstPage extends AppCompatActivity
                             }
                         }
                     });
+            //hi
             startActivity(tSignInSignUp);
         }
         else if (id == R.id.nav_rate_us)
