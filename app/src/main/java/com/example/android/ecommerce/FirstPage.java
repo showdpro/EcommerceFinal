@@ -113,10 +113,6 @@ public class FirstPage extends AppCompatActivity
         }
         else if (id == R.id.nav_My_order)
         {
-
-           Intent order= new Intent(FirstPage.this,MyOrders.class);
-
-        startActivity(Test);
         }
         else if (id == R.id.nav_My_cart)
         {
