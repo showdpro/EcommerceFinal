@@ -18,7 +18,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.auth.data.model.User;
+import com.google.android.gms.tasks.Continuation;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,29 +30,44 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Objects;
+import java.util.SimpleTimeZone;
 
 public class ProjectDescription extends AppCompatActivity {
     //ImageView iconCart;
-    TextView ProductBrand, ProductName, ProductPrice, ProductMRP, ProductDiscount;
-    TextView WishList, Cart;
-    EditText editText1, editText2, editText3, editText4, editText5, editText6, editText7, editText8, editText9, editText10, editText11, editText12;
+    private TextView ProductBrand, ProductName, ProductPrice, ProductMRP, ProductDiscount;
+    private TextView WishList, Cart;
+    private EditText editText1, editText2, editText3, editText4, editText5, editText6, editText7, editText8, editText9, editText10, editText11, editText12;
 
-    TextInputLayout textInput1, textInput2, textInput3, textInput4, textInput5, textInput6, textInput7, textInput8, textInput9, textInput10, textInput11, textInput12;
-    Button save;
-    LinearLayout profilePicLayout;
-    ImageView profilePic;
+    private TextInputLayout textInput1, textInput2, textInput3, textInput4, textInput5, textInput6, textInput7, textInput8, textInput9, textInput10, textInput11, textInput12;
+    private Button save;
+    private LinearLayout profilePicLayout;
+    private ImageView profilePic;
+    private StorageReference profilePicRef;
+    private FirebaseDatabase userInfo=FirebaseDatabase.getInstance();
+    private DatabaseReference Mainref=userInfo.getReference();
+    private DatabaseReference Existing_value=userInfo.getReference();
 
-    FirebaseDatabase userInfo=FirebaseDatabase.getInstance();
-    DatabaseReference Mainref=userInfo.getReference();
-    DatabaseReference Existing_value=userInfo.getReference();
-    FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
-    ProgressDialog loadingBar;
-    HashMap<String,Object>userInfomap=new HashMap<>();
-    UserInfoForDatabase userClass;
-    String name;
+    private FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+    private ProgressDialog loadingBar;
+    private HashMap<String,Object>userInfomap=new HashMap<>();
+    private UserInfoForDatabase userClass;
+    private String name;
     private Uri imageUri;
+    private String saveCurrentDate;
+    private String saveCurrentTime;
+    private String key;
+    private String downloadImageUri;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,6 +109,7 @@ public class ProjectDescription extends AppCompatActivity {
 
         loadingBar=new ProgressDialog(ProjectDescription.this);
         userClass=new UserInfoForDatabase();
+        profilePicRef= FirebaseStorage.getInstance().getReference().child("userPicture");
         loadingBar.setTitle("Checking for previous Data");
         loadingBar.setMessage("Plaese Wait..");
         loadingBar.show();
@@ -147,6 +166,7 @@ public class ProjectDescription extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if(requestCode==1&&resultCode==RESULT_OK && data!=null);
         {
+            assert data != null;
             imageUri=data.getData();
             profilePic.setImageURI(imageUri);
 
@@ -165,7 +185,7 @@ public class ProjectDescription extends AppCompatActivity {
 
         int flag = 0;
 
-            if (Name == 0 || phone == 0 || address == 0 ||city==0||state==0|| email == 0 || designation == 0 || work_type == 0) {
+            if (Name == 0 || phone == 0 || address == 0 ||city==0||state==0|| email == 0 || designation == 0 || work_type == 0 || imageUri==null) {
                 if (Name == 0) {
                     textInput1.setError("This field needs to be filled");
 
@@ -202,17 +222,86 @@ public class ProjectDescription extends AppCompatActivity {
 
                     textInput12.setError("This field needs to be filled");
                 }
+                if (imageUri==null) {
+
+                    Toast.makeText(this, "You need to add your Picture", Toast.LENGTH_SHORT).show();
+                }
             }
             else
             {
-                saveDataToDataBase();
+                createPicKey();
                 loadingBar.setTitle("Saving data");
                 loadingBar.setMessage("Please Wait..");
                 loadingBar.show();
+
             }
 
 
      }
+
+    private void createPicKey() {
+        Calendar calendar=Calendar.getInstance();
+
+        SimpleDateFormat currentDate=new SimpleDateFormat("MMM dd,YYYY");
+        saveCurrentDate =currentDate.format(calendar.getTime());
+
+        SimpleDateFormat currentTime=new SimpleDateFormat("HH:mm:ss a");
+        saveCurrentTime = currentTime.format(calendar.getTime());
+
+        key=saveCurrentDate + saveCurrentTime;
+
+        final StorageReference filePath= profilePicRef.child(imageUri.getLastPathSegment()+key+".jpg");
+        final UploadTask uploadTask= filePath.putFile(imageUri);
+        filePath.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                filePath.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        downloadImageUri=uri.toString().trim();
+                        Toast.makeText(ProjectDescription.this,downloadImageUri, Toast.LENGTH_SHORT).show();
+                        saveDataToDataBase();
+                    }
+                });
+
+            }
+        });
+
+//        Toast.makeText(this, filePath.getDownloadUrl().toString(), Toast.LENGTH_SHORT).show();
+
+//        uploadTask.addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                Toast.makeText(ProjectDescription.this, "Error in uploading Pic"+ e, Toast.LENGTH_SHORT).show();
+//            }
+//        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+//            @Override
+//            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+//                Task<Uri> UriTask=uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+//                    @Override
+//                    public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+//                        if(!task.isSuccessful())
+//                        {
+//                            throw Objects.requireNonNull(task.getException());
+//                        }
+//                        downloadImageUri=profilePicRef.child(imageUri.getLastPathSegment()+key+".jpg").getDownloadUrl().toString();
+//                        Toast.makeText(ProjectDescription.this, downloadImageUri , Toast.LENGTH_SHORT).show();
+//                        return filePath.getDownloadUrl();
+//                    }
+//                }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+//                    @Override
+//                    public void onComplete(@NonNull Task<Uri> task) {
+//
+//                        if(task.isSuccessful())
+//                        {
+//                            saveDataToDataBase();
+//                        }
+//                    }
+//                });
+//            }
+//        });
+
+    }
 
     private void saveDataToDataBase() {
         final String Name = editText1.getText().toString();
@@ -240,6 +329,7 @@ public class ProjectDescription extends AppCompatActivity {
         userClass.setLinkedIn(linked_in);
         userClass.setDesignation(designation);
         userClass.setWorktype(work_type);
+        userClass.setPicUri(downloadImageUri);
         Mainref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
@@ -275,19 +365,19 @@ public class ProjectDescription extends AppCompatActivity {
     private void putValuesInEditText(@org.jetbrains.annotations.NotNull DataSnapshot dataSnapshot) {
         for(DataSnapshot ds:dataSnapshot.getChildren())
         {
-            userClass.setName(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getName());
-            userClass.setPhone(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getPhone());
-            userClass.setAddress(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getAddress());
-            userClass.setCity(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getCity());
-            userClass.setState(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getState());
-            userClass.setEmail(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getEmail());
-            userClass.setWebsite(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getWebsite());
-            userClass.setInstagram(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getInstagram());
-            userClass.setFacebook(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getFacebook());
-            userClass.setLinkedIn(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getLinkedIn());
-            userClass.setDesignation(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getDesignation());
-            userClass.setWorktype(ds.child(user.getUid()).getValue(UserInfoForDatabase.class).getWorktype());
-
+            userClass.setName(Objects.requireNonNull(ds.child(user.getUid()).getValue(UserInfoForDatabase.class)).getName());
+            userClass.setPhone(Objects.requireNonNull(ds.child(user.getUid()).getValue(UserInfoForDatabase.class)).getPhone());
+            userClass.setAddress(Objects.requireNonNull(ds.child(user.getUid()).getValue(UserInfoForDatabase.class)).getAddress());
+            userClass.setCity(Objects.requireNonNull(ds.child(user.getUid()).getValue(UserInfoForDatabase.class)).getCity());
+            userClass.setState(Objects.requireNonNull(ds.child(user.getUid()).getValue(UserInfoForDatabase.class)).getState());
+            userClass.setEmail(Objects.requireNonNull(ds.child(user.getUid()).getValue(UserInfoForDatabase.class)).getEmail());
+            userClass.setWebsite(Objects.requireNonNull(ds.child(user.getUid()).getValue(UserInfoForDatabase.class)).getWebsite());
+            userClass.setInstagram(Objects.requireNonNull(ds.child(user.getUid()).getValue(UserInfoForDatabase.class)).getInstagram());
+            userClass.setFacebook(Objects.requireNonNull(ds.child(user.getUid()).getValue(UserInfoForDatabase.class)).getFacebook());
+            userClass.setLinkedIn(Objects.requireNonNull(ds.child(user.getUid()).getValue(UserInfoForDatabase.class)).getLinkedIn());
+            userClass.setDesignation(Objects.requireNonNull(ds.child(user.getUid()).getValue(UserInfoForDatabase.class)).getDesignation());
+            userClass.setWorktype(Objects.requireNonNull(ds.child(user.getUid()).getValue(UserInfoForDatabase.class)).getWorktype());
+            userClass.setPicUri(Objects.requireNonNull(ds.child(user.getUid()).getValue(UserInfoForDatabase.class)).getPicUri());
             editText1.setText(userClass.getName().toString());
             editText2.setText(userClass.getPhone().toString());
             editText3.setText(userClass.getAddress().toString());
@@ -300,6 +390,8 @@ public class ProjectDescription extends AppCompatActivity {
             editText10.setText(userClass.getLinkedIn().toString());
             editText11.setText(userClass.getDesignation().toString());
             editText12.setText(userClass.getWorktype().toString());
+            Picasso.with(this).load(Uri.parse(userClass.getPicUri())).into(profilePic);
+
 
             loadingBar.dismiss();
         }

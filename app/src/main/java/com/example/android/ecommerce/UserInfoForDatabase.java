@@ -14,11 +14,13 @@ public class UserInfoForDatabase {
     private String linkedIn;
     private String designation;
     private String worktype;
+    private String picUri;
 
     public UserInfoForDatabase() {
     }
 
-    public UserInfoForDatabase(String name, String phone, String address, String city, String state, String email, String website, String instagram, String facebook, String linkedIn, String designation, String worktype) {
+    public UserInfoForDatabase(String name, String phone, String address, String city, String state, String email, String website, String instagram, String facebook, String linkedIn, String designation, String worktype,String picUri) {
+
         this.name = name;
         this.phone = phone;
         this.address = address;
@@ -31,6 +33,15 @@ public class UserInfoForDatabase {
         this.linkedIn = linkedIn;
         this.designation = designation;
         this.worktype = worktype;
+        this.picUri=picUri;
+    }
+
+    public String getPicUri() {
+        return picUri;
+    }
+
+    public void setPicUri(String picUri) {
+        this.picUri = picUri;
     }
 
     public String getName() {
