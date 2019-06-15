@@ -1,7 +1,10 @@
 package com.example.android.ecommerce;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -35,6 +38,8 @@ public class ProjectDescription extends AppCompatActivity {
 
     TextInputLayout textInput1, textInput2, textInput3, textInput4, textInput5, textInput6, textInput7, textInput8, textInput9, textInput10, textInput11, textInput12;
     Button save;
+    LinearLayout profilePicLayout;
+    ImageView profilePic;
 
     FirebaseDatabase userInfo=FirebaseDatabase.getInstance();
     DatabaseReference Mainref=userInfo.getReference();
@@ -44,6 +49,7 @@ public class ProjectDescription extends AppCompatActivity {
     HashMap<String,Object>userInfomap=new HashMap<>();
     UserInfoForDatabase userClass;
     String name;
+    private Uri imageUri;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,6 +94,9 @@ public class ProjectDescription extends AppCompatActivity {
         loadingBar.setTitle("Checking for previous Data");
         loadingBar.setMessage("Plaese Wait..");
         loadingBar.show();
+        profilePicLayout=(LinearLayout)findViewById(R.id.profile_pic_layout);
+        profilePic=(ImageView)findViewById(R.id.profile_pic);
+
 
         Mainref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -116,8 +125,33 @@ public class ProjectDescription extends AppCompatActivity {
                 userInfomap.clear();
             }
         });
+
+        profilePicLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openGallery();
+            }
+        });
+
     }
 
+    private void openGallery() {
+        Intent tGallery=new Intent();
+        tGallery.setAction(Intent.ACTION_GET_CONTENT);
+        tGallery.setType("image/*");
+        startActivityForResult(tGallery,1);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==1&&resultCode==RESULT_OK && data!=null);
+        {
+            imageUri=data.getData();
+            profilePic.setImageURI(imageUri);
+
+        }
+    }
 
     private void ifAnyDetailIsEmpty() {
         int Name = editText1.getText().toString().trim().length();

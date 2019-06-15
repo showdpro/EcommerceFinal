@@ -138,7 +138,6 @@ public class FirstPage extends AppCompatActivity
                             }
                         }
                     });
-            //hi
             startActivity(tSignInSignUp);
         }
         else if (id == R.id.nav_rate_us)
