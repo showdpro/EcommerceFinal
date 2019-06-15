@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MyAccount extends AppCompatActivity{
-    TextView order;
+    LinearLayout MyOrder,MyProfile;
     Intent myOrder;
 
     @Override
@@ -18,14 +18,20 @@ public class MyAccount extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_account);
 
-        order=findViewById(R.id.myorders);
-
-        order.setOnClickListener(new View.OnClickListener() {
+        MyOrder=(LinearLayout) findViewById(R.id.linear_my_orders);
+        MyProfile=(LinearLayout)findViewById(R.id.linear_my_profile);
+        MyOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 myOrder=new Intent(MyAccount.this,MyOrders.class);
                 startActivity(myOrder);
+            }
+        });
+        MyProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MyAccount.this,ProfileActivity.class));
             }
         });
 

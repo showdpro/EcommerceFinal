@@ -39,7 +39,7 @@
                 android:id="@+id/image1"
                 android:layout_width="180dp"
                 android:layout_height="120dp"
-                android:src="@drawable/imageview"
+                android:src="@drawable/ic_menu_gallery"
                 android:layout_marginTop="13dp"/>
             <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/edit_price"
@@ -82,14 +82,14 @@
                 android:id="@+id/edit_description"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Description*"
+                android:hint="@string/description"
                 android:fontFamily="serif"
                 android:textSize="27sp"/>
 
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
-    <android.support.design.button.MaterialButton
+    <Button
         android:id="@+id/proceed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
