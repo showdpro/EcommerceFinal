@@ -14,7 +14,7 @@ import org.w3c.dom.Text;
 
 public class Sign_up_and_Sign_in extends AppCompatActivity {
     Button SignIn,SignUp;
-    Intent tSignUp;
+    //Intent tSignUp;
     Intent tSignIn;
     int flag=0;
     @Override
@@ -25,18 +25,21 @@ public class Sign_up_and_Sign_in extends AppCompatActivity {
         tSignUp=new Intent(Sign_up_and_Sign_in.this,Authentication.class);
 
         setContentView(R.layout.activity_sign_up_and__sign_in);
-        tSignIn=new Intent(Sign_up_and_Sign_in.this, FirstPage.class);
+        //SignUp=(Button)findViewById(R.id.button_sign_up);
+        SignIn=(Button)findViewById(R.id.button_sign_in);
+        tSignIn=new Intent(Sign_up_and_Sign_in.this,Authentication.class);
+        //tSignUp=new Intent(Sign_up_and_Sign_in.this, FirstPage.class);
         if(flag==0);
         {
             AuthUI.getInstance().signOut(this);
             super.onCreate(savedInstanceState);
         }
     }
-    public void toSignUp(View view)
-    {
-        startActivity(tSignUp);
-
-    }
+//    public void toSignUp(View view)
+//    {
+//        startActivity(tSignUp);
+//
+//    }
     public void toSignIn(View view)
     {
        startActivity(tSignIn);

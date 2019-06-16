@@ -20,7 +20,7 @@
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_centerInParent="true"
-        android:background="@drawable/button_box"
+        android:background="@drawable/button_outline_fill"
         android:text="@string/sign_in"
         android:textAllCaps="true"
         android:textColor="@color/colorWhite"

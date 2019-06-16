@@ -29,7 +29,7 @@ public class FirstPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     Intent tSettings;
     Intent tSignInSignUp;
-    Intent Test;
+    Intent Test,account;
 
 
     @Override
@@ -50,6 +50,7 @@ public class FirstPage extends AppCompatActivity
         });
         tSignInSignUp=new Intent(FirstPage.this,Sign_up_and_Sign_in.class);
         Test=new Intent(this,ProjectDescription.class);
+        account= new Intent(FirstPage.this,MyAccount.class);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -103,8 +104,7 @@ public class FirstPage extends AppCompatActivity
         }
         else if (id == R.id.nav_my_account)
         {
-           Intent account= new Intent(FirstPage.this,MyAccount.class);
-           startActivity(account);
+          startActivity(account);
         }
         else if (id == R.id.nav_wishlist)
         {
@@ -121,7 +121,7 @@ public class FirstPage extends AppCompatActivity
         else if (id == R.id.nav_My_order)
         {
 
-           Intent order= new Intent(FirstPage.this,MyOrders.class);
+           Intent order= new Intent(FirstPage.this,ProjectDescription.class);
 
         startActivity(Test);
         }

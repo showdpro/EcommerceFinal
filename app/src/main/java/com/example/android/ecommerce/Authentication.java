@@ -57,6 +57,7 @@ public class Authentication extends AppCompatActivity {
                 new AuthUI.IdpConfig.GoogleBuilder().build()
         );
 
+
         showSignInOptions();
 
     }
