@@ -20,7 +20,7 @@ public class Sign_up_and_Sign_in extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        SignUp=(Button)findViewById(R.id.button_sign_up);
+//        SignUp=(Button)findViewById(R.id.button_sign_up);
         SignIn=(Button)findViewById(R.id.button_sign_in);
 //        tSignUp=new Intent(Sign_up_and_Sign_in.this,Authentication.class);
 

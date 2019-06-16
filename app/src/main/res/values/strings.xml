@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">So Called Shopping App</string>
+    <string name="app_name">DWARFSTAR STUDIOS</string>
+    <string name="app_tag">The Next Gen Technology</string>
+
     <string name="title_activity_first_page">Home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -12,6 +14,9 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="others">Others</string>
+
+    <string name="ar_selfie">AR SELFIE STICK</string>
+    <string name="ar_card">AR VISITING CARD</string>
 
     <string name="price">Price*</string>
     <string name="gender">Gender*</string>

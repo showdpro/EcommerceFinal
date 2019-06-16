@@ -8,16 +8,17 @@
     tools:context=".ProfileActivity"
     android:orientation="vertical">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/relative_layout_profile"
+        android:orientation="vertical"
         >
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:cardBackgroundColor="@android:color/transparent"
+        android:layout_height="100dp"
+        app:cardBackgroundColor="@color/color_purple"
         android:id="@+id/card_account_1"
 
         />
@@ -30,18 +31,10 @@
         android:layout_marginStart="150dp"
         android:layout_marginEnd="150dp"
         android:id="@+id/image_card_1"
-        android:layout_below="@+id/card_account_1"
+
         />
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:cardBackgroundColor="@android:color/transparent"
-        android:id="@+id/card_account_2"
-        android:layout_below="@+id/image_card_1"
-        android:layout_marginTop="-50dp"
-        />
-    </RelativeLayout>
+    </LinearLayout>
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"

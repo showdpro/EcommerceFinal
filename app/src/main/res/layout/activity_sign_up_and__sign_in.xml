@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:contentDescription="@string/sign_up"
-
+        android:src="@drawable/gradient_bg5"
         android:scaleType="centerCrop"
          />
 
@@ -20,7 +20,7 @@
         android:layout_width="300dp"
         android:layout_height="70dp"
         android:layout_centerInParent="true"
-        android:background="@drawable/button_outline_fill"
+        android:background="@drawable/button_box"
         android:text="@string/sign_in"
         android:onClick="toSignIn"
         android:textAllCaps="true"
