@@ -26,6 +26,7 @@
         android:textAllCaps="true"
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:ignore="OnClick" />
 
 </RelativeLayout>
