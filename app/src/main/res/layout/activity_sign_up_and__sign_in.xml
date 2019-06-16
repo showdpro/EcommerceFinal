@@ -22,6 +22,7 @@
         android:layout_centerInParent="true"
         android:background="@drawable/button_outline_fill"
         android:text="@string/sign_in"
+        android:onClick="toSignIn"
         android:textAllCaps="true"
         android:textColor="@color/colorWhite"
         android:textSize="20sp"
@@ -29,20 +30,5 @@
 
         />
 
-    <Button
-        android:id="@+id/button_sign_up"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/button_sign_in"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/button_box_white"
-        android:text="@string/sign_up"
-        android:textAllCaps="true"
-        android:textColor="#000"
-        android:textSize="20sp"
-        android:textStyle="bold"
-
-        />
 
 </RelativeLayout>
