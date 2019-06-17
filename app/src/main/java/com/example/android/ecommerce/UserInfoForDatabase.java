@@ -2,141 +2,140 @@ package com.example.android.ecommerce;
 
 public class UserInfoForDatabase {
 
-    private String name;
-    private String phone;
-    private String address;
-    private String city;
-    private String state;
-    private String email;
-    private String website;
-    private String instagram;
-    private String facebook;
-    private String linkedIn;
-    private String designation;
-    private String worktype;
-    private String picUri;
+    private String Name;
+    private String Phone;
+    private String Address;
+    private String City;
+    private String State;
+    private String Email;
+    private String Website;
+    private String Instagram;
+    private String Facebook;
+    private String LinkedIn;
+    private String Designation;
+    private String Worktype;
+    private String PicUri;
 
     public UserInfoForDatabase() {
     }
 
-    public UserInfoForDatabase(String name, String phone, String address, String city, String state, String email, String website, String instagram, String facebook, String linkedIn, String designation, String worktype,String picUri) {
-
-        this.name = name;
-        this.phone = phone;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.email = email;
-        this.website = website;
-        this.instagram = instagram;
-        this.facebook = facebook;
-        this.linkedIn = linkedIn;
-        this.designation = designation;
-        this.worktype = worktype;
-        this.picUri=picUri;
-    }
-
-    public String getPicUri() {
-        return picUri;
-    }
-
-    public void setPicUri(String picUri) {
-        this.picUri = picUri;
+    public UserInfoForDatabase(String name, String phone, String address, String city, String state, String email, String website, String instagram, String facebook, String linkedIn, String designation, String worktype, String picUri) {
+        Name = name;
+        Phone = phone;
+        Address = address;
+        City = city;
+        State = state;
+        Email = email;
+        Website = website;
+        Instagram = instagram;
+        Facebook = facebook;
+        LinkedIn = linkedIn;
+        Designation = designation;
+        Worktype = worktype;
+        PicUri = picUri;
     }
 
     public String getName() {
-        return name;
+        return Name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        Name = name;
     }
 
     public String getPhone() {
-        return phone;
+        return Phone;
     }
 
     public void setPhone(String phone) {
-        this.phone = phone;
+        Phone = phone;
     }
 
     public String getAddress() {
-        return address;
+        return Address;
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        Address = address;
     }
 
     public String getCity() {
-        return city;
+        return City;
     }
 
     public void setCity(String city) {
-        this.city = city;
+        City = city;
     }
 
     public String getState() {
-        return state;
+        return State;
     }
 
     public void setState(String state) {
-        this.state = state;
+        State = state;
     }
 
     public String getEmail() {
-        return email;
+        return Email;
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        Email = email;
     }
 
     public String getWebsite() {
-        return website;
+        return Website;
     }
 
     public void setWebsite(String website) {
-        this.website = website;
+        Website = website;
     }
 
     public String getInstagram() {
-        return instagram;
+        return Instagram;
     }
 
     public void setInstagram(String instagram) {
-        this.instagram = instagram;
+        Instagram = instagram;
     }
 
     public String getFacebook() {
-        return facebook;
+        return Facebook;
     }
 
     public void setFacebook(String facebook) {
-        this.facebook = facebook;
+        Facebook = facebook;
     }
 
     public String getLinkedIn() {
-        return linkedIn;
+        return LinkedIn;
     }
 
     public void setLinkedIn(String linkedIn) {
-        this.linkedIn = linkedIn;
+        LinkedIn = linkedIn;
     }
 
     public String getDesignation() {
-        return designation;
+        return Designation;
     }
 
     public void setDesignation(String designation) {
-        this.designation = designation;
+        Designation = designation;
     }
 
     public String getWorktype() {
-        return worktype;
+        return Worktype;
     }
 
     public void setWorktype(String worktype) {
-        this.worktype = worktype;
+        Worktype = worktype;
+    }
+
+    public String getPicUri() {
+        return PicUri;
+    }
+
+    public void setPicUri(String picUri) {
+        PicUri = picUri;
     }
 }

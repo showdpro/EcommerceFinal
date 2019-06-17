@@ -120,7 +120,7 @@ public class ProjectDescription extends AppCompatActivity {
         Mainref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-               if((dataSnapshot.child("UserInfo").child(user.getUid()).exists()))
+               if((dataSnapshot.child("Users").child("UserInfo").child(user.getUid()).exists()))
                {
                    putValuesInEditText(dataSnapshot);
                }
@@ -333,7 +333,7 @@ public class ProjectDescription extends AppCompatActivity {
         Mainref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull final DataSnapshot dataSnapshot) {
-                Mainref.child("UserInfo").child(uid).setValue(userClass)
+                Mainref.child("Users").child("UserInfo").child(uid).setValue(userClass)
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
@@ -363,9 +363,9 @@ public class ProjectDescription extends AppCompatActivity {
     }
 
     private void putValuesInEditText(@org.jetbrains.annotations.NotNull DataSnapshot dataSnapshot) {
-        for(DataSnapshot ds:dataSnapshot.getChildren())
+        for(DataSnapshot ds:dataSnapshot.child("Users").getChildren())
         {
-            userClass.setName(Objects.requireNonNull(ds.child(user.getUid()).getValue(UserInfoForDatabase.class)).getName());
+            userClass.setName((ds.child(user.getUid()).getValue(UserInfoForDatabase.class)).getName());
             userClass.setPhone(Objects.requireNonNull(ds.child(user.getUid()).getValue(UserInfoForDatabase.class)).getPhone());
             userClass.setAddress(Objects.requireNonNull(ds.child(user.getUid()).getValue(UserInfoForDatabase.class)).getAddress());
             userClass.setCity(Objects.requireNonNull(ds.child(user.getUid()).getValue(UserInfoForDatabase.class)).getCity());
