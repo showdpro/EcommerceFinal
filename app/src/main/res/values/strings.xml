@@ -15,6 +15,8 @@
     <string name="female">Female</string>
     <string name="others">Others</string>
 
+    <string name="cat_desc_content">Description_content</string>
+    <string name="cat_desc">Description</string>
     <string name="ar_selfie">AR SELFIE STICK</string>
     <string name="ar_card">AR VISITING CARD</string>
 
