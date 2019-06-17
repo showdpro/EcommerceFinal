@@ -11,6 +11,10 @@
     <string name="action_settings">Settings</string>
     <string name="name">Name*</string>
 
+
+    <string name="order_date">Date</string>
+    <string name="order_time">Time</string>
+
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="others">Others</string>
