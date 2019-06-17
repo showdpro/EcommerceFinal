@@ -8,38 +8,13 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.flaviofaria.kenburnsview.KenBurnsView
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/kbv"
-        android:src="@drawable/bg_img"/>
+        android:id="@+id/recycler_view_home"
+        android:scrollbars="vertical"/>
 
 
-    <Button
-        android:id="@+id/button_ar_selfie"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_centerInParent="true"
-        android:background="@drawable/button_box"
-        android:text="@string/ar_selfie"
-        android:textAllCaps="true"
-        android:textColor="@color/colorWhite"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/button_ar_visiting_card"
-        android:layout_width="300dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/button_ar_selfie"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/button_box"
-        android:text="@string/ar_card"
-        android:textAllCaps="true"
-        android:textColor="#FFF"
-        android:textSize="20sp"
-        android:textStyle="bold" />
 
 
 
