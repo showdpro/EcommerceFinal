@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="30dp"
+    android:padding="20dp"
+    android:orientation="vertical"
  >
 
     <!--<com.flaviofaria.kenburnsview.KenBurnsView-->
@@ -12,74 +13,70 @@
         <!--android:id="@+id/kbv"-->
         <!--android:src="@drawable/bg_img"/>-->
 
-    <android.support.v7.widget.CardView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
+      android:padding="10dp"
+        android:orientation="vertical">
 
-        <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+        <ImageView
+            android:id="@+id/category_image"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ar_selfie" />
+
+        <android.support.v7.widget.CardView
+
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="-30dp">
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="10dp">
 
-                <ImageView
-                    android:contentDescription="@string/prod_name"
-                    android:id="@+id/category_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:scaleType="centerCrop"
-                    android:src=""
-                    />
-
                 <TextView
                     android:id="@+id/category_name"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
                     android:fontFamily="@font/rajdhani_medium"
-                    android:text="@string/prod_name"
-                    android:textAllCaps="false"
+                    android:text="@string/cat_name"
+                    android:textAllCaps="true"
                     android:textColor="#000"
-                    android:textSize="25sp"
-                    android:textStyle="normal"
-                    android:layout_marginTop="5dp"/>
-
-
+                    android:textStyle="bold"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:id="@+id/category_description"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
-                    android:fontFamily="@font/rajdhani_medium"
                     android:text="@string/cat_desc"
-                    android:textAllCaps="false"
                     android:textColor="#000"
                     android:textSize="20sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/rajdhani_medium"
+                    android:textStyle="bold"/>
 
 
                 <TextView
                     android:id="@+id/category_description_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@android:color/transparent"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/rambla_bold"
                     android:text="@string/cat_desc_content"
-                    android:textAllCaps="false"
                     android:textColor="@color/grey"
-                    android:textSize="19sp"
-                    android:textStyle="bold" />
+                    android:textSize="18sp" />
 
 
             </LinearLayout>
 
-
-
-
-
         </android.support.v7.widget.CardView>
+    </LinearLayout>
 
 
-
-</RelativeLayout>
+</LinearLayout>
