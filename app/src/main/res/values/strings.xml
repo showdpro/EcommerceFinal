@@ -14,6 +14,7 @@
 
     <string name="order_date">Date</string>
     <string name="order_time">Time</string>
+    <string name="remove_cart">Remove </string>
 
     <string name="male">Male</string>
     <string name="female">Female</string>

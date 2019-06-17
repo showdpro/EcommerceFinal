@@ -4,6 +4,7 @@ public class Order {
 
     private String order_name, order_brand, order_date, order_time;
     private double order_price;
+    //button is left
 
     public Order() {
     }

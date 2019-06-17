@@ -13,6 +13,7 @@ import java.util.List;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder>{
 
+    //button is left
     Context context;
     List<Order> orderList;
 
