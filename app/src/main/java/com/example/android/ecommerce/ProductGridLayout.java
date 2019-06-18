@@ -1,16 +1,15 @@
 package com.example.android.ecommerce;
-
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.widget.Toast;
 
-import com.example.android.ecommerce.Adapters.CartAdapter;
-import com.example.android.ecommerce.Adapters.MyWishlistAdapter;
+import com.example.android.ecommerce.Adapters.CategoryAdapter;
+import com.example.android.ecommerce.Adapters.ProductAdapter;
+import com.example.android.ecommerce.classesInfo.Category;
 import com.example.android.ecommerce.classesInfo.Product;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -20,31 +19,38 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Wishlist extends AppCompatActivity {
+public class ProductGridLayout extends AppCompatActivity{
     RecyclerView recyclerView;
-    MyWishlistAdapter adapter;
+    ProductAdapter adapter;
     FirebaseDatabase database;
     List<Product> productList;
-    FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+    private  String CategoryName;
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_wishlist);
-        recyclerView=(RecyclerView)findViewById(R.id.wishlist_RecyclerView);
+        setContentView(R.layout.product_grid_layout);
+        getIncominIntent();
+
+        recyclerView=(RecyclerView)findViewById(R.id.recycler_view_product_temp);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         productList =new ArrayList<>();
-        DatabaseReference dbCategory= FirebaseDatabase.getInstance().getReference("Wishlist");
-        dbCategory.addValueEventListener(new ValueEventListener() {
+        DatabaseReference dbCategory= FirebaseDatabase.getInstance().getReference("Categories");
+
+        dbCategory.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot ds:dataSnapshot.child(user.getUid()).getChildren())
+                for(DataSnapshot ds:dataSnapshot.child(CategoryName).child("Products").child("Name").getChildren())
                 {
                     Product product=ds.getValue(Product.class);
                     productList.add(product);
                 }
-                adapter=new MyWishlistAdapter(Wishlist.this,productList);
+                adapter=new ProductAdapter(ProductGridLayout.this,productList);
                 recyclerView.setAdapter(adapter);
+
+
             }
 
             @Override
@@ -53,8 +59,14 @@ public class Wishlist extends AppCompatActivity {
             }
         });
 
-
     }
-
+    private void getIncominIntent()
+    {
+        if(getIntent().hasExtra("Category Name"))
+        {
+            CategoryName=getIntent().getStringExtra("Category Name");
+            Toast.makeText(this, CategoryName, Toast.LENGTH_SHORT).show();
+        }
+    }
 
 }

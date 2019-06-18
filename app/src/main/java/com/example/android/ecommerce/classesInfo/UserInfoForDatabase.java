@@ -1,4 +1,4 @@
-package com.example.android.ecommerce;
+package com.example.android.ecommerce.classesInfo;
 
 public class UserInfoForDatabase {
 

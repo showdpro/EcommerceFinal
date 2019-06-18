@@ -1,4 +1,4 @@
-package com.example.android.ecommerce;
+package com.example.android.ecommerce.Adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.android.ecommerce.classesInfo.Order;
+import com.example.android.ecommerce.R;
 
 import java.util.List;
 

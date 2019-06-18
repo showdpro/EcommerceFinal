@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -15,21 +17,32 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Toast;
 
+import com.example.android.ecommerce.Adapters.CategoryAdapter;
+import com.example.android.ecommerce.classesInfo.Category;
 import com.firebase.ui.auth.AuthUI;
-import com.flaviofaria.kenburnsview.KenBurnsView;
-import com.flaviofaria.kenburnsview.RandomTransitionGenerator;
-import com.flaviofaria.kenburnsview.Transition;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class FirstPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     Intent tSettings;
     Intent tSignInSignUp;
     Intent Test,account;
+    RecyclerView recyclerView;
+    CategoryAdapter adapter;
+    FirebaseDatabase database;
+    List<Category> categories;
+
 
 
     @Override
@@ -51,6 +64,37 @@ public class FirstPage extends AppCompatActivity
         tSignInSignUp=new Intent(FirstPage.this,Sign_up_and_Sign_in.class);
         Test=new Intent(this,ProjectDescription.class);
         account= new Intent(FirstPage.this,MyAccount.class);
+        recyclerView=(RecyclerView)findViewById(R.id.recycler_view_home);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        categories=new ArrayList<>();
+        DatabaseReference dbCategory=FirebaseDatabase.getInstance().getReference("Categories");
+
+        dbCategory.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot ds:dataSnapshot.getChildren())
+                {
+                    Category category=ds.getValue(Category.class);
+                    categories.add(category);
+                }
+                adapter=new CategoryAdapter(FirstPage.this,categories);
+                recyclerView.setAdapter(adapter);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+
+
+
+
+
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -108,6 +152,7 @@ public class FirstPage extends AppCompatActivity
         }
         else if (id == R.id.nav_wishlist)
         {
+            startActivity(new Intent(FirstPage.this, Wishlist.class));
 
         }
         else if (id == R.id.nav_notification)
@@ -127,7 +172,7 @@ public class FirstPage extends AppCompatActivity
         }
         else if (id == R.id.nav_My_cart)
         {
-
+            startActivity(new Intent(FirstPage.this,Mycart.class));
         }
         else if (id == R.id.nav_logout)
         {

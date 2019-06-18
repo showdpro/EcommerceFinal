@@ -22,11 +22,11 @@ public class Sign_up_and_Sign_in extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        RelativeLayout linearLayout = findViewById(R.id.relative_layout_sign_up);
-        AnimationDrawable animationDrawable = (AnimationDrawable) linearLayout.getBackground();
-        animationDrawable.setEnterFadeDuration(1000);
-        animationDrawable.setExitFadeDuration(2000);
-        animationDrawable.start();
+//        RelativeLayout linearLayout = findViewById(R.id.relative_layout_sign_up);
+//        AnimationDrawable animationDrawable = (AnimationDrawable) linearLayout.getBackground();
+//        animationDrawable.setEnterFadeDuration(1000);
+//        animationDrawable.setExitFadeDuration(2000);
+//        animationDrawable.start();
 //        SignUp=(Button)findViewById(R.id.button_sign_up);
         SignIn=(Button)findViewById(R.id.button_sign_in);
         super.onCreate(savedInstanceState);
