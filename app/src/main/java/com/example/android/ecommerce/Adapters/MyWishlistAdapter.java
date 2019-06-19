@@ -54,7 +54,7 @@ public class MyWishlistAdapter extends RecyclerView.Adapter<MyWishlistAdapter.My
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyWishListViewHolder myWishListViewHolder, int position) {
+    public void onBindViewHolder(@NonNull final MyWishListViewHolder myWishListViewHolder, final int position) {
         final Product product = productList.get(position);
         final Uri uri=Uri.parse(product.getImage_uri());
         myWishListViewHolder.textViewName.setText(product.getName());
@@ -76,7 +76,7 @@ public class MyWishlistAdapter extends RecyclerView.Adapter<MyWishlistAdapter.My
             private void AddToCart() {
                 final DatabaseReference cartref=productdb.getReference().child("Cart");
 
-                cartref.addValueEventListener(new ValueEventListener() {
+                cartref.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.child(user.getUid()).child(product.getName()).exists())
@@ -119,37 +119,38 @@ public class MyWishlistAdapter extends RecyclerView.Adapter<MyWishlistAdapter.My
                 });
             }
         });
-//        myWishListViewHolder.removeWish.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                removeWish();
-//            }
-//
-//            private void removeWish() {
-//                final DatabaseReference cartref=productdb.getReference().child("Wishlist");
-//
-//                cartref.addValueEventListener(new ValueEventListener() {
-//                    @Override
-//                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                        cartref.child(user.getUid()).setValue(null);
-////                                .addOnCompleteListener(new OnCompleteListener<Void>() {
-////                                    @Override
-////                                    public void onComplete(@NonNull Task<Void> task) {
-////                                        if (task.isSuccessful())
-////                                        {
-////                                            Toast.makeText(context1, "Removed Successfully", Toast.LENGTH_SHORT).show();
-////                                        }
-////                                    }
-////                                });
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//                    }
-//                });
-//            }
-//        });
+        myWishListViewHolder.removeWish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                removeWish();
+            }
+
+            private void removeWish() {
+                final DatabaseReference cartref=productdb.getReference().child("Wishlist");
+
+                cartref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        cartref.child(user.getUid()).child(product.getName()).removeValue()
+
+                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful())
+                                        {
+                                            Toast.makeText(context1, "Removed Successfully Please Reopen The page", Toast.LENGTH_LONG).show();
+                                        }
+                                    }
+                                });
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+            }
+        });
 
 
     }

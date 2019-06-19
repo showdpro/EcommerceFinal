@@ -108,7 +108,7 @@ public class form extends AppCompatActivity {
     private void AddToWishlist() {
         final DatabaseReference wishRef=productdb.getReference().child("Wishlist");
 
-        wishRef.addValueEventListener(new ValueEventListener() {
+        wishRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.child(user.getUid()).child(ProductName).exists())
@@ -156,7 +156,7 @@ public class form extends AppCompatActivity {
     private void AddToCart() {
         final DatabaseReference cartref=productdb.getReference().child("Cart");
 
-        cartref.addValueEventListener(new ValueEventListener() {
+        cartref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.child(user.getUid()).child(ProductName).exists())

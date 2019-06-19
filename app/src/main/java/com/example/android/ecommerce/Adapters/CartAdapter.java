@@ -76,7 +76,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             private void AddToWishList() {
                 final DatabaseReference wishRef=productdb.getReference().child("Wishlist");
 
-                wishRef.addValueEventListener(new ValueEventListener() {
+                wishRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.child(user.getUid()).child(product.getName()).exists())

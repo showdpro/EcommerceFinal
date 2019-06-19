@@ -1,59 +1,72 @@
 package com.example.android.ecommerce.classesInfo;
 
 public class Order {
+    private String Name;
+    private String Description;
+    private String Price;
+    private String Date;
+    private String Time;
+    private String image_uri;
 
-    private String order_name, order_brand, order_date, order_time;
-    private double order_price;
-    //button is left
+
 
     public Order() {
     }
 
-    public Order(String order_name, String order_brand, String order_date, String order_time, double order_price) {
-        this.order_name = order_name;
-        this.order_brand = order_brand;
-        this.order_date = order_date;
-        this.order_time = order_time;
-        this.order_price = order_price;
+    public Order(String name, String description, String price, String date, String time, String image_uri) {
+        Name = name;
+        Description = description;
+        Price = price;
+        Date = date;
+        Time = time;
+        this.image_uri = image_uri;
     }
 
-    public String getOrder_name() {
-        return order_name;
+    public String getName() {
+        return Name;
     }
 
-    public void setOrder_name(String order_name) {
-        this.order_name = order_name;
+    public void setName(String name) {
+        Name = name;
     }
 
-    public String getOrder_brand() {
-        return order_brand;
+    public String getDescription() {
+        return Description;
     }
 
-    public void setOrder_brand(String order_brand) {
-        this.order_brand = order_brand;
+    public void setDescription(String description) {
+        Description = description;
     }
 
-    public String getOrder_date() {
-        return order_date;
+    public String getPrice() {
+        return Price;
     }
 
-    public void setOrder_date(String order_date) {
-        this.order_date = order_date;
+    public void setPrice(String price) {
+        Price = price;
     }
 
-    public String getOrder_time() {
-        return order_time;
+    public String getDate() {
+        return Date;
     }
 
-    public void setOrder_time(String order_time) {
-        this.order_time = order_time;
+    public void setDate(String date) {
+        Date = date;
     }
 
-    public double getOrder_price() {
-        return order_price;
+    public String getTime() {
+        return Time;
     }
 
-    public void setOrder_price(double order_price) {
-        this.order_price = order_price;
+    public void setTime(String time) {
+        Time = time;
+    }
+
+    public String getImage_uri() {
+        return image_uri;
+    }
+
+    public void setImage_uri(String image_uri) {
+        this.image_uri = image_uri;
     }
 }

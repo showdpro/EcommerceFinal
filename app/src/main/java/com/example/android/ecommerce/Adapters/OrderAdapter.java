@@ -1,6 +1,7 @@
 package com.example.android.ecommerce.Adapters;
 
 import android.content.Context;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,42 +12,42 @@ import android.widget.TextView;
 
 import com.example.android.ecommerce.classesInfo.Order;
 import com.example.android.ecommerce.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHolder>{
 
     //button is left
-    Context context;
+    Context context2;
     List<Order> orderList;
 
-    public OrderAdapter(Context context, List<Order> orderList) {
-        this.context = context;
+    public OrderAdapter(Context context2, List<Order> orderList) {
+        this.context2 = context2;
         this.orderList = orderList;
     }
 
     @NonNull
     @Override
-    public OrderAdapter.OrderViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public OrderViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int ViewType) {
 
-        View view = LayoutInflater.from(context).inflate(R.layout.my_orders_page, viewGroup, false);
-        OrderAdapter.OrderViewHolder orderViewHolder = new OrderAdapter.OrderViewHolder(view);
+        View view = LayoutInflater.from(context2).inflate(R.layout.my_orders_page, viewGroup, false);
+        OrderViewHolder orderViewHolder = new OrderViewHolder(view);
         return orderViewHolder;
     }
 
 
 
     @Override
-    public void onBindViewHolder(@NonNull OrderAdapter.OrderViewHolder orderViewHolder, int i) {
+    public void onBindViewHolder(@NonNull OrderAdapter.OrderViewHolder orderViewHolder, int position) {
 
-    Order order = orderList.get(i);
-
-       orderViewHolder.textViewName.setText(order.getOrder_name());
-      orderViewHolder.textViewBrand.setText(order.getOrder_brand());
-        orderViewHolder.textViewDate.setText(order.getOrder_date());
-        orderViewHolder.textViewPrice.setText(String.valueOf(order.getOrder_price()));
-        orderViewHolder.textViewTime.setText(order.getOrder_time());
-        // productViewHolder.setImageDrawable(context.getResources().getDrawable(product.getImage(), null));
+    Order order = orderList.get(position);
+    orderViewHolder.textViewName.setText(order.getName());
+    orderViewHolder.textViewdescription.setText(order.getDescription());
+    orderViewHolder.textViewPrice.setText(order.getDate());
+    orderViewHolder.textViewDate.setText(order.getDate());
+    orderViewHolder.textViewTime.setText(order.getTime());
+    Picasso.with(context2).load(Uri.parse(order.getImage_uri())).into(orderViewHolder.imageView);
 
     }
 
@@ -58,14 +59,14 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     class OrderViewHolder extends RecyclerView.ViewHolder{
 
         ImageView imageView;
-        TextView textViewName, textViewBrand, textViewDate, textViewPrice, textViewTime;
+        TextView textViewName, textViewdescription, textViewDate, textViewPrice, textViewTime;
 
 
         public OrderViewHolder(@NonNull View itemView) {
             super(itemView);
 
             imageView=itemView.findViewById(R.id.order_image);
-            textViewBrand=itemView.findViewById(R.id.order_brand);
+            textViewdescription=itemView.findViewById(R.id.my_order_description);
             textViewName=itemView.findViewById(R.id.order_name);
             textViewPrice=itemView.findViewById(R.id.order_price);
             textViewDate=itemView.findViewById(R.id.order_date);

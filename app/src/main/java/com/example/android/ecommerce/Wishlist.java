@@ -25,6 +25,7 @@ public class Wishlist extends AppCompatActivity {
     MyWishlistAdapter adapter;
     FirebaseDatabase database;
     List<Product> productList;
+    Product product;
     FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
 
     @Override
@@ -44,6 +45,8 @@ public class Wishlist extends AppCompatActivity {
                     productList.add(product);
                 }
                 adapter=new MyWishlistAdapter(Wishlist.this,productList);
+//                adapter.notifyItemChanged(productList.indexOf(product),productList.size());
+//                adapter.notifyDataSetChanged();
                 recyclerView.setAdapter(adapter);
             }
 
