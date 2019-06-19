@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="20dp"
+
+    android:layout_margin="16dp"
     >
 
     <android.support.v7.widget.CardView
@@ -94,14 +95,15 @@
 
                 <LinearLayout
                     android:id="@+id/addTo_wishList"
-                    android:layout_width="170dp"
+                    android:layout_width="175dp"
                     android:layout_height="50dp"
                     android:orientation="horizontal"
                     android:padding="10dp"
-                    android:background="@color/colorAccent"
+                    android:background="@color/color_purple"
                     >
 
                     <ImageView
+                        android:contentDescription="@string/cat_desc"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:src="@drawable/wishlist"
@@ -112,7 +114,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/wishlist"
-                android:textStyle="normal"
+                android:textStyle="bold"
                 android:textSize="20sp"
                 android:textAllCaps="true"
                 android:textColor="#FFF"
@@ -125,15 +127,16 @@
 
                 <LinearLayout
                     android:id="@+id/remove_cart"
-                    android:layout_width="170dp"
+                    android:layout_width="175dp"
                     android:layout_height="50dp"
                     android:orientation="horizontal"
                     android:padding="10dp"
-                    android:background="@color/colorAccent"
+                    android:background="@color/color_purple"
                     android:layout_marginStart="10dp"
                     >
 
                     <ImageView
+                        android:contentDescription="@string/remove_cart"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:src="@drawable/remove_cart"
@@ -144,7 +147,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:text="@string/remove_cart"
-                        android:textStyle="normal"
+                        android:textStyle="bold"
                         android:textSize="20sp"
                         android:textAllCaps="true"
                         android:textColor="#FFF"

@@ -13,7 +13,8 @@
         <item name="windowNoTitle">true</item>
     </style>
     <style name="MyTheme" parent="AppTheme">
-        <item name="android:windowBackground">@android:color/background_dark</item>
+        <item name="android:windowBackground">@drawable/gradient_bg5</item>
+
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

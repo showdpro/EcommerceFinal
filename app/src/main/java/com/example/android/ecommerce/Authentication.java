@@ -67,7 +67,7 @@ public class Authentication extends AppCompatActivity {
         startActivityForResult(
                 AuthUI.getInstance().createSignInIntentBuilder()
                         .setAvailableProviders(providers)
-                        .setTheme(R.style.AppTheme)
+                        .setTheme(R.style.MyTheme)
                         .build(),MY_REQUEST_CODE
         );
     }
@@ -101,5 +101,6 @@ public class Authentication extends AppCompatActivity {
 
     private void GoToFirstPage() {
         startActivity(goToFirstPage);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 }

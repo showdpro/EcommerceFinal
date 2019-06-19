@@ -19,6 +19,10 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="others">Others</string>
+    <string name="view_details">View Details</string>
+    <string name="place_order">Place Order</string>
+    <string name="shop_more">Shop More</string>
+    <string name="cancel">Cancel</string>
 
     <string name="cat_desc_content">Description_content</string>
     <string name="cat_desc">Description</string>

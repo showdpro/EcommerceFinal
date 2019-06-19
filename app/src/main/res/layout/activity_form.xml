@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#FFF"
     android:orientation="vertical">
 
-    <LinearLayout
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFF"
@@ -32,7 +32,7 @@
                 card_view:cardPreventCornerOverlap="false"
                 card_view:cardUseCompatPadding="false">
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="#FFF"
@@ -40,6 +40,7 @@
                     android:padding="20dp">
 
                     <ImageView
+                        android:contentDescription="@string/prod_name"
                         android:id="@+id/ProductImage"
                         android:layout_width="match_parent"
                         android:layout_height="500dp" />
@@ -49,7 +50,6 @@
                         android:id="@+id/product_Name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@+id/ProductImage"
                         android:background="@android:color/transparent"
                         android:fontFamily="@font/cambay_bold"
                         android:text="@string/product_name"
@@ -59,28 +59,8 @@
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
+
                     <TextView
-                        android:id="@+id/Product_Description"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/product_Name"
-                        android:layout_gravity="center_horizontal"
-                        android:background="@android:color/transparent"
-                        android:fontFamily="@font/rajdhani_medium"
-                        android:text="@string/description1"
-                        android:textAllCaps="false"
-                        android:textColor="@color/grey"
-                        android:textSize="17sp"
-                        android:textStyle="normal" />
-
-                    <LinearLayout
-                        android:id="@+id/linear_layout_price"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/Product_Description"
-                        android:orientation="horizontal">
-
-                        <TextView
                             android:id="@+id/product_price"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -89,105 +69,71 @@
                             android:textAllCaps="false"
                             android:textColor="#000"
                             android:textSize="19sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                       />
 
 
 
-                    </LinearLayout>
-                </RelativeLayout>
-            </android.support.v7.widget.CardView>
 
-
-            <android.support.v7.widget.CardView
-                android:id="@+id/card_view_add_product"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/card_view"
-                android:layout_margin="10dp"
-                card_view:cardBackgroundColor="#FFF">
-
-
-                <LinearLayout
-                    android:id="@+id/linear_layout_choose_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="70dp"
-                    android:layout_below="@+id/linear_layout_size_circles"
-                    android:background="@android:color/transparent"
-                    android:orientation="horizontal"
-                    android:paddingStart="20dp"
-                    android:paddingTop="10dp"
-                    android:paddingEnd="10dp"
-                    android:paddingBottom="10dp">
-
-                    <LinearLayout
-                        android:id="@+id/wishlist_btn"
-                        android:layout_width="166dp"
-                        android:layout_height="50dp"
-                        android:background="@drawable/button_outline"
-                        android:orientation="horizontal">
-
-                        <ImageView
-
-                            android:layout_width="25dp"
-                            android:layout_height="30dp"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="10dp"
-                            android:background="@android:color/transparent"
-                            android:contentDescription="@string/wishlist"
-                            android:src="@drawable/wishlist" />
-
-                        <TextView
-                            android:id="@+id/wishlist_txtview"
-                            android:layout_width="95dp"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:layout_marginStart="5dp"
-                            android:text="@string/wishlist"
-                            android:textAlignment="center"
-                            android:textAllCaps="true"
-                            android:textColor="@color/colorPrimary"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:id="@+id/cart_btn"
-                        android:layout_width="166dp"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="20dp"
-                        android:background="@drawable/button_outline_fill"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="70dp"
-                            android:layout_gravity="center_vertical"
-                            android:background="@android:color/transparent"
-                            android:contentDescription="@string/add_cart"
-                            android:src="@drawable/cart_icon" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:text="@string/add_cart"
-
-                            android:textAlignment="center"
-                            android:textAllCaps="true"
-                            android:textColor="#FFF"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/card_view_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                card_view:cardBackgroundColor="#FFF"
+                card_view:cardElevation="10dp"
+                card_view:cardCornerRadius="4dp"
+                android:layout_below="@+id/card_view"
+                card_view:cardPreventCornerOverlap="false"
+                card_view:cardUseCompatPadding="false">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFF"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+            <TextView
+                android:id="@+id/Product_Description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/rajdhani_medium"
+                android:text="@string/cat_desc"
+                android:textAllCaps="false"
+                android:textColor="#000"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+                <TextView
+                    android:id="@+id/Product_Description_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/rajdhani_medium"
+                    android:text="@string/cat_desc_content"
+                    android:textAllCaps="false"
+                    android:textColor="@color/grey"
+                    android:textSize="17sp"
+                    android:textStyle="normal" />
+
+
+            </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
 
 
             <ImageView
                 android:id="@+id/icon_cart"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginEnd="10dp"
@@ -196,5 +142,90 @@
                 android:elevation="20dp"
                 android:src="@drawable/cart_icon" />
         </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.v7.widget.CardView
+    android:id="@+id/card_view_add_product"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/card_view"
+    android:layout_margin="10dp"
+    card_view:cardBackgroundColor="#FFF"
+        app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+        >
+
+
+    <LinearLayout
+    android:id="@+id/linear_layout_choose_button"
+    android:layout_width="wrap_content"
+    android:layout_height="70dp"
+    android:layout_below="@+id/linear_layout_size_circles"
+    android:background="@android:color/transparent"
+    android:orientation="horizontal"
+    android:layout_margin="10dp">
+
+    <LinearLayout
+    android:id="@+id/wishlist_btn"
+    android:layout_width="175dp"
+    android:layout_height="50dp"
+    android:background="@drawable/button_outline"
+    android:orientation="horizontal">
+
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/wishlist"
+            android:src="@drawable/_purple" />
+
+    <TextView
+    android:id="@+id/wishlist_txtview"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:layout_marginStart="10dp"
+    android:text="@string/wishlist"
+    android:textAlignment="center"
+    android:textAllCaps="true"
+    android:textColor="@color/color_purple"
+    android:textSize="20sp"
+    android:textStyle="bold" />
+
     </LinearLayout>
-</ScrollView>
+
+    <LinearLayout
+    android:id="@+id/cart_btn"
+    android:layout_width="175dp"
+    android:layout_height="50dp"
+    android:layout_marginStart="20dp"
+    android:background="@color/color_purple"
+    android:orientation="horizontal">
+
+    <ImageView
+    android:layout_width="70dp"
+    android:layout_height="70dp"
+    android:layout_gravity="center_vertical"
+    android:background="@android:color/transparent"
+    android:contentDescription="@string/add_cart"
+        android:src="@drawable/cart_icon"
+    />
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:text="@string/add_cart"
+        android:textAlignment="center"
+    android:textAllCaps="true"
+    android:textColor="#FFF"
+    android:textSize="20sp"
+    android:textStyle="bold" />
+
+    </LinearLayout>
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</android.support.design.widget.CoordinatorLayout>

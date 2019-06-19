@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 
 
 public class MainActivity extends AppCompatActivity {
-    private static int SPLASH_TIME_OUT =2500;
+    private static int SPLASH_TIME_OUT =5000;
 
 
     @Override
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         public void run() {
             Intent intent = new Intent(MainActivity.this, Sign_up_and_Sign_in.class);
             startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             finish();
         }
     },SPLASH_TIME_OUT);

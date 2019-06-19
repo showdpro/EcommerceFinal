@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="wrap_content">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff">
 
     <android.support.v7.widget.CardView
-        android:layout_margin="5dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -13,22 +18,23 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp">
+            android:padding="10dp">
 
             <ImageView
+                android:contentDescription="@string/prod_name"
                 android:id="@+id/product_imageView"
                 android:layout_width="180dp"
-                android:layout_height="120dp"
+                android:layout_height="150dp"
                 android:padding="4dp" />
 
             <TextView
                 android:id="@+id/product_ViewTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:text="Product Name"
-                android:textSize="20dp"
-                android:layout_toRightOf="@id/product_imageView"
+                android:layout_marginStart="10dp"
+                android:text="@string/prod_name"
+                android:textSize="20sp"
+                android:layout_toEndOf="@id/product_imageView"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:textColor="#000000" />
 
@@ -37,10 +43,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/product_ViewPrice"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_toRightOf="@id/product_imageView"
-                android:text="Description"
+                android:layout_toEndOf="@id/product_imageView"
+                android:text="@string/cat_desc"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
 
@@ -49,9 +55,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/product_ViewTitle"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_toRightOf="@id/product_imageView"
+                android:layout_toEndOf="@id/product_imageView"
                 android:text="INR 56990"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textStyle="bold" />

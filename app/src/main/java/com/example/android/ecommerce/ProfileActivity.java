@@ -5,21 +5,24 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class ProfileActivity extends AppCompatActivity {
-    private Button changePassword;
+    private TextView cancel,save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        changePassword=(Button)findViewById(R.id.btn_change_password);
+        cancel=findViewById(R.id.cancel_text);
+        save=findViewById(R.id.save_text);
 
-        changePassword.setOnClickListener(new View.OnClickListener() {
+        cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ProfileActivity.this,ChangePassword.class));
+                startActivity(new Intent(ProfileActivity.this,FirstPage.class));
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
             }
         });
 

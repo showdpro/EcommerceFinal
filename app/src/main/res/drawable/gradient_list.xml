@@ -4,18 +4,18 @@
 
     <item
         android:drawable="@drawable/gradient_bg1"
-        android:duration="500"/>
+        android:duration="1000"/>
     <item
         android:drawable="@drawable/gradient_bg2"
-        android:duration="500"/>
+        android:duration="1000"/>
     <item
         android:drawable="@drawable/gradient_bg3"
-        android:duration="500"/>
+        android:duration="1000"/>
     <item
         android:drawable="@drawable/gradient_bg4"
-        android:duration="500"/>
+        android:duration="1000"/>
     <item
         android:drawable="@drawable/gradient_bg5"
-        android:duration="500"/>
+        android:duration="1000"/>
 
 </animation-list>

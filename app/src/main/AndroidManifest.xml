@@ -16,9 +16,7 @@
         <activity android:name=".ChangePassword" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".Authentication" />
-        <activity android:name=".MyAccount" />
         <activity android:name=".form" />
-        <activity android:name=".Details" />
         <activity android:name=".ProductGridLayout"/>
         <activity android:name=".Wishlist"/>
         <activity

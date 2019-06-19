@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
+<android.support.design.widget.CoordinatorLayout
 xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,6 +8,11 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".form"
 android:orientation="vertical">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
 <RelativeLayout
 
     android:layout_width="match_parent"
@@ -49,7 +54,7 @@ android:orientation="vertical">
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_gravity="center"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:text="@string/click_here_to_add_a_passport_size_photo"
                 android:textColor="@color/cardview_dark_background"
                 tools:ignore="PrivateResource" />
@@ -242,22 +247,6 @@ android:orientation="vertical">
             </android.support.design.widget.TextInputLayout>
 
 
-            <Button
-                android:id="@+id/Save_Button"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="20dp"
-                android:background="@color/colorAccent"
-                android:orientation="horizontal"
-                android:text="@string/save"
-                android:textAlignment="center"
-                android:paddingTop="15dp"
-                android:textAllCaps="true"
-                android:textColor="@color/colorWhite"
-                android:textSize="16sp"
-                android:textStyle="bold" >
-
-            </Button>
 
 
 
@@ -267,4 +256,23 @@ android:orientation="vertical">
 
 
 </RelativeLayout>
-</ScrollView>
+    </android.support.v4.widget.NestedScrollView>
+    <Button
+        android:id="@+id/Save_Button"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+
+        android:background="@color/color_purple"
+        android:gravity="center_vertical"
+        android:text="@string/save"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/colorWhite"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+        />
+
+
+
+</android.support.design.widget.CoordinatorLayout>

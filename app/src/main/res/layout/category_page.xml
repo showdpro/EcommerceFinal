@@ -7,11 +7,6 @@
     android:padding="20dp"
     android:orientation="vertical">
 
-    <!--<com.flaviofaria.kenburnsview.KenBurnsView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:id="@+id/kbv"-->
-        <!--android:src="@drawable/bg_img"/>-->
 
 
     <LinearLayout

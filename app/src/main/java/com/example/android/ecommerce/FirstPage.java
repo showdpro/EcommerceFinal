@@ -35,9 +35,9 @@ import java.util.List;
 
 public class FirstPage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    Intent tSettings;
+
     Intent tSignInSignUp;
-    Intent Test,account;
+    Intent Test;
     RecyclerView recyclerView;
     CategoryAdapter adapter;
     FirebaseDatabase database;
@@ -57,13 +57,13 @@ public class FirstPage extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                startActivity(new Intent(FirstPage.this,Mycart.class));
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
             }
         });
         tSignInSignUp=new Intent(FirstPage.this,Sign_up_and_Sign_in.class);
         Test=new Intent(this,ProjectDescription.class);
-        account= new Intent(FirstPage.this,MyAccount.class);
+
         recyclerView=(RecyclerView)findViewById(R.id.recycler_view_home);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         categories=new ArrayList<>();
@@ -88,11 +88,6 @@ public class FirstPage extends AppCompatActivity
 
             }
         });
-
-
-
-
-
 
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -146,33 +141,30 @@ public class FirstPage extends AppCompatActivity
         {
 
         }
-        else if (id == R.id.nav_my_account)
-        {
-          startActivity(account);
-        }
+
         else if (id == R.id.nav_wishlist)
         {
             startActivity(new Intent(FirstPage.this, Wishlist.class));
+            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
 
         }
         else if (id == R.id.nav_notification)
         {
 
         }
-        else if (id == R.id.nav_setting)
-        {
-            startActivity(tSettings);
-        }
+
         else if (id == R.id.nav_My_order)
         {
 
-           Intent order= new Intent(FirstPage.this,ProjectDescription.class);
+           Intent order= new Intent(FirstPage.this,MyOrders.class);
 
-        startActivity(Test);
+        startActivity(order);
+            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
         }
         else if (id == R.id.nav_My_cart)
         {
             startActivity(new Intent(FirstPage.this,Mycart.class));
+            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
         }
         else if (id == R.id.nav_logout)
         {
@@ -191,18 +183,18 @@ public class FirstPage extends AppCompatActivity
                         }
                     });
             startActivity(tSignInSignUp);
+            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
         }
-        else if (id == R.id.nav_rate_us)
-        {
 
-        }
-        else if (id == R.id.nav_share)
-        {
-
-        }
         else if (id == R.id.nav_help_centre)
         {
 
+        }
+
+        else if (id == R.id.nav_reset_pswrd)
+        {
+            startActivity(new Intent(FirstPage.this,ChangePassword.class));
+            overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
         }
 
 
