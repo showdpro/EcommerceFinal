@@ -26,6 +26,7 @@ public class Wishlist extends AppCompatActivity {
     FirebaseDatabase database;
     List<Product> productList;
     Product product;
+    //hi
     FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
 
     @Override
