@@ -13,14 +13,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
     tools:replace="android:appComponentFactory">
-        <activity android:name=".Mycart"/>
-        <activity android:name=".MyOrders" />
-        <activity android:name=".ChangePassword" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".Authentication" />
-        <activity android:name=".form" />
-        <activity android:name=".ProductGridLayout"/>
-        <activity android:name=".Wishlist"/>
+        <activity android:name=".Mycart"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".MyOrders"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ChangePassword"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ProfileActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Authentication"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".form"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ProductGridLayout"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Wishlist"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".Sign_up_and_Sign_in"
             android:screenOrientation="portrait" />
@@ -35,7 +43,8 @@
         <activity
             android:name=".Payment"
             android:screenOrientation="portrait" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
