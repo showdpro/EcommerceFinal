@@ -116,5 +116,9 @@
     <string name="product_name">Product Name</string>
     <string name="description1">Description</string>
 
+    <string name="payments_show_name" translatable="false">Successfully received payment data for %s!</string>
+    <string name="enter_amount">Enter Amount</string>
+    <string name="pay">PAY</string>
+
 
 </resources>
