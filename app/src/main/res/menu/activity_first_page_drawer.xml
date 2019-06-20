@@ -17,7 +17,7 @@
         <item
             android:id="@+id/nav_notification"
             android:icon="@drawable/ic_forum_black_24dp"
-            android:title="Notifications    " />
+            android:title="Notifications" />
 
         <item
             android:id="@+id/nav_My_order"
