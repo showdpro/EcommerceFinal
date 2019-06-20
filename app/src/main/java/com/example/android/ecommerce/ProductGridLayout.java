@@ -1,14 +1,12 @@
 package com.example.android.ecommerce;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.widget.Toast;
 
-import com.example.android.ecommerce.Adapters.CategoryAdapter;
 import com.example.android.ecommerce.Adapters.ProductAdapter;
-import com.example.android.ecommerce.classesInfo.Category;
 import com.example.android.ecommerce.classesInfo.Product;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

@@ -1,19 +1,11 @@
 package com.example.android.ecommerce;
 
 import android.content.Intent;
-import android.graphics.drawable.AnimationDrawable;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Layout;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-
-import com.google.firebase.database.FirebaseDatabase;
-
-import org.w3c.dom.Text;
 
 public class Sign_up_and_Sign_in extends AppCompatActivity {
     Button SignIn,SignUp;

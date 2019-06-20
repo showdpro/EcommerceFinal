@@ -24,7 +24,7 @@
             android:src="@drawable/ar_selfie"
             android:contentDescription="@string/ar_selfie"/>
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
 
             android:layout_width="300dp"
             android:layout_height="wrap_content"
@@ -72,7 +72,7 @@
 
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
 
 
