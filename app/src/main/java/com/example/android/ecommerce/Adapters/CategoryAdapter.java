@@ -47,7 +47,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         categoryViewHolder.name.setText(category.getName());
         categoryViewHolder.imageView.setImageURI(Uri.parse(category.getImage_uri()));
         categoryViewHolder.description.setText((category.getDescription()));
-        Picasso.with(mCtx).load(uri).into(categoryViewHolder.imageView);
+        Picasso.get().load(uri).into(categoryViewHolder.imageView);
         categoryViewHolder.categoryLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

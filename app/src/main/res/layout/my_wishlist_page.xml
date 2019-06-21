@@ -19,7 +19,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="400dp"
                 android:orientation="horizontal"
                 android:padding="10dp">
 
@@ -98,7 +98,7 @@
                     android:layout_height="50dp"
                     android:orientation="horizontal"
                     android:padding="10dp"
-                    android:background="@color/color_purple"
+                    android:background="@drawable/button_box_purple"
                     >
 
                     <ImageView
@@ -131,7 +131,7 @@
                     android:layout_height="50dp"
                     android:orientation="horizontal"
                     android:padding="10dp"
-                    android:background="@color/color_purple"
+                    android:background="@drawable/button_box_purple"
                     android:layout_marginStart="10dp"
                     >
 

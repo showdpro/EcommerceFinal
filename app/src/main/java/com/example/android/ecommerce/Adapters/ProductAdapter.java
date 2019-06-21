@@ -49,7 +49,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         //productViewHolder.textViewBuy.setText(product.getBuy_button());
         productViewHolder.textViewPrice.setText(String.valueOf(product.getPrice()));
         productViewHolder.description.setText(product.getDescription());
-        Picasso.with(context).load(uri).into(productViewHolder.imageView);
+        Picasso.get().load(uri).into(productViewHolder.imageView);
         productViewHolder.productLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

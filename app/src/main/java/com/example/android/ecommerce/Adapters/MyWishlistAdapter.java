@@ -60,7 +60,7 @@ public class MyWishlistAdapter extends RecyclerView.Adapter<MyWishlistAdapter.My
         //productViewHolder.textViewBuy.setText(product.getBuy_button());
         myWishListViewHolder.textViewPrice.setText(String.valueOf(product.getPrice()));
         myWishListViewHolder.description.setText(product.getDescription());
-        Picasso.with(context1).load(uri).into(myWishListViewHolder.imageView);
+        Picasso.get().load(uri).into(myWishListViewHolder.imageView);
 
         myWishListViewHolder.addtoCart.setOnClickListener(new View.OnClickListener() {
             @Override

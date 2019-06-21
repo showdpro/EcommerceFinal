@@ -47,7 +47,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
     orderViewHolder.textViewPrice.setText(order.getDate());
     orderViewHolder.textViewDate.setText(order.getDate());
     orderViewHolder.textViewTime.setText(order.getTime());
-    Picasso.with(context2).load(Uri.parse(order.getImage_uri())).into(orderViewHolder.imageView);
+    Picasso.get().load(Uri.parse(order.getImage_uri())).into(orderViewHolder.imageView);
 
     }
 

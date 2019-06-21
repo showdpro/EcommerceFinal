@@ -205,7 +205,7 @@ public class form extends AppCompatActivity {
             description.setText(product.getDescription());
             price.setText(product.getPrice());
 
-            Picasso.with(this).load(Uri.parse(product.getImage_uri())).into(productImage);
+            Picasso.get().load(Uri.parse(product.getImage_uri())).into(productImage);
 
 
         }

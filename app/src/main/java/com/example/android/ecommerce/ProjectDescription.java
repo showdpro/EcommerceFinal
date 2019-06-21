@@ -386,7 +386,7 @@ public class ProjectDescription extends AppCompatActivity {
             editText10.setText(userClass.getLinkedIn().toString());
             editText11.setText(userClass.getDesignation().toString());
             editText12.setText(userClass.getWorktype().toString());
-            Picasso.with(this).load(Uri.parse(userClass.getPicUri())).into(profilePic);
+            Picasso.get().load(Uri.parse(userClass.getPicUri())).into(profilePic);
 
 
             loadingBar.dismiss();

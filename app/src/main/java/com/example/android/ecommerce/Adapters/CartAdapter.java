@@ -61,7 +61,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         //productViewHolder.textViewBuy.setText(product.getBuy_button());
         cartViewHolder.textViewPrice.setText(String.valueOf(product.getPrice()));
         cartViewHolder.description.setText(product.getDescription());
-        Picasso.with(context).load(uri).into(cartViewHolder.imageView);
+        Picasso.get().load(uri).into(cartViewHolder.imageView);
 
         cartViewHolder.addtoWishlist.setOnClickListener(new View.OnClickListener() {
             @Override
