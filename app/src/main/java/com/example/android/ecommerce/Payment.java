@@ -37,7 +37,7 @@ public class Payment extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mycart);
+        setContentView(R.layout.activity_project_description);
 
         mPaymentsClient =
                 Wallet.getPaymentsClient(
@@ -65,7 +65,7 @@ public class Payment extends AppCompatActivity {
                         try {
                             boolean result = task.getResult(ApiException.class);
                             if (result) {
-                                mGooglePayButton = findViewById(R.id.GooglePay);
+                                mGooglePayButton = findViewById(R.id.Save_Button);
                                 mGooglePayButton.setOnClickListener(
                                         new View.OnClickListener() {
                                             @Override
