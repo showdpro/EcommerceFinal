@@ -11,7 +11,6 @@
 
 
     <LinearLayout
-
         android:layout_width="match_parent"
         android:id="@+id/category_linear_layout"
         android:layout_height="wrap_content"
@@ -21,7 +20,7 @@
         <ImageView
             android:id="@+id/category_image"
             android:layout_width="match_parent"
-            android:layout_height="300dp"
+            android:layout_height="400dp"
             android:scaleType="centerCrop"
             android:src="@drawable/ar_selfie"
             android:contentDescription="@string/ar_selfie"/>
@@ -49,7 +48,7 @@
                     android:textAllCaps="true"
                     android:textColor="#000"
                     android:textStyle="bold"
-                    android:textSize="20sp" />
+                    android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/category_description"
@@ -57,7 +56,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/cat_desc"
                     android:textColor="#000"
-                    android:textSize="20sp"
+                    android:textSize="30sp"
                     android:fontFamily="@font/rajdhani_medium"
                     android:textStyle="bold"/>
 
@@ -70,7 +69,7 @@
                     android:fontFamily="@font/rambla_bold"
                     android:text="@string/cat_desc_content"
                     android:textColor="@color/grey"
-                    android:textSize="18sp" />
+                    android:textSize="28sp" />
 
 
             </LinearLayout>

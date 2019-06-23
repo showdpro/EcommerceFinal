@@ -44,7 +44,7 @@
                         android:contentDescription="@string/prod_name"
                         android:id="@+id/ProductImage"
                         android:layout_width="match_parent"
-                        android:layout_height="300dp" />
+                        android:layout_height="400dp" />
 
 
                     <TextView
@@ -57,7 +57,7 @@
                         android:layout_marginTop="20dp"
                         android:textAllCaps="false"
                         android:textColor="@color/grey"
-                        android:textSize="20sp"
+                        android:textSize="30sp"
                         android:textStyle="bold" />
 
 
@@ -69,7 +69,7 @@
                             android:text="@string/prod_price"
                             android:textAllCaps="false"
                             android:textColor="#000"
-                            android:textSize="19sp"
+                            android:textSize="29sp"
                             android:textStyle="bold"
                        />
 
@@ -108,7 +108,7 @@
                 android:text="@string/cat_desc"
                 android:textAllCaps="false"
                 android:textColor="#000"
-                android:textSize="20sp"
+                android:textSize="30sp"
                 android:textStyle="normal" />
 
                 <TextView
@@ -121,7 +121,7 @@
                     android:text="@string/cat_desc_content"
                     android:textAllCaps="false"
                     android:textColor="@color/grey"
-                    android:textSize="17sp"
+                    android:textSize="27sp"
                     android:textStyle="normal" />
 
 
@@ -165,8 +165,9 @@
 
     <LinearLayout
     android:id="@+id/wishlist_btn"
-    android:layout_width="190dp"
-    android:layout_height="50dp"
+    android:layout_width="250dp"
+    android:layout_height="70dp"
+        android:layout_marginLeft="15dp"
     android:background="@drawable/button_outline"
     android:orientation="horizontal">
 
@@ -190,16 +191,16 @@
     android:textAlignment="center"
     android:textAllCaps="true"
     android:textColor="@color/color_purple"
-    android:textSize="20sp"
+    android:textSize="30sp"
     android:textStyle="bold" />
 
     </LinearLayout>
 
     <LinearLayout
     android:id="@+id/cart_btn"
-    android:layout_width="190dp"
-    android:layout_height="50dp"
-    android:layout_marginStart="10dp"
+    android:layout_width="250dp"
+    android:layout_height="70dp"
+    android:layout_marginStart="50dp"
     android:background="@color/color_purple"
     android:orientation="horizontal">
 
@@ -221,7 +222,7 @@
         android:textAlignment="center"
     android:textAllCaps="true"
     android:textColor="#FFF"
-    android:textSize="20sp"
+    android:textSize="30sp"
     android:textStyle="bold"
 
        />

@@ -62,21 +62,6 @@ android:orientation="vertical">
         </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/text_layout_state"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/temp_user_state"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/state"
-                    android:inputType="textPostalAddress"
-                    android:textSize="15sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/text_layout_name"
@@ -87,7 +72,7 @@ android:orientation="vertical">
                     android:layout_height="wrap_content"
                     android:id="@+id/temp_user_name"
                     android:inputType="textPersonName"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
                     android:hint="@string/Name"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -105,7 +90,7 @@ android:orientation="vertical">
 
                     android:hint="@string/phone"
                     android:inputType="textPhonetic"
-                    android:textSize="15sp" />
+                    android:textSize="20sp" />
 
 
 
@@ -122,7 +107,7 @@ android:orientation="vertical">
                     android:layout_height="wrap_content"
                     android:id="@+id/temp_user_address"
                     android:inputType="textPostalAddress"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
                     android:hint="@string/address"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -137,8 +122,23 @@ android:orientation="vertical">
                     android:layout_height="wrap_content"
                     android:id="@+id/temp_user_city"
                     android:inputType="textPostalAddress"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
                     android:hint="@string/city"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_layout_state"
+                android:layout_marginTop="10dp"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/temp_user_state"
+                    android:inputType="textPostalAddress"
+                    android:textSize="20sp"
+                    android:hint="@string/state"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -152,7 +152,7 @@ android:orientation="vertical">
                     android:layout_height="wrap_content"
                     android:id="@+id/temp_user_email"
                     android:inputType="textEmailAddress"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
                     android:hint="@string/email"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -167,7 +167,7 @@ android:orientation="vertical">
                     android:layout_height="wrap_content"
                     android:id="@+id/temp_user_website_url"
                     android:inputType="textUri"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
                     android:hint="@string/website"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -182,7 +182,7 @@ android:orientation="vertical">
                     android:layout_height="wrap_content"
                     android:id="@+id/temp_user_instagram_url"
                     android:inputType="textUri"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
                     android:hint="@string/instagram"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -197,7 +197,7 @@ android:orientation="vertical">
                     android:layout_height="wrap_content"
                     android:id="@+id/temp_user_facebook_url"
                     android:inputType="textUri"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
                     android:hint="@string/facebook"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -212,7 +212,7 @@ android:orientation="vertical">
                     android:layout_height="wrap_content"
                     android:id="@+id/temp_user_linked_in_url"
                     android:inputType="textUri"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
                     android:hint="@string/linked_in"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -227,7 +227,7 @@ android:orientation="vertical">
                     android:layout_height="wrap_content"
                     android:id="@+id/temp_user_designation"
                     android:inputType="textCapWords"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
                     android:hint="@string/designation"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -242,7 +242,7 @@ android:orientation="vertical">
                     android:layout_height="wrap_content"
                     android:id="@+id/temp_user_work_type"
                     android:inputType="textCapWords"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
                     android:hint="@string/profession"/>
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -260,7 +260,7 @@ android:orientation="vertical">
     <Button
         android:id="@+id/Save_Button"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
 
         android:background="@color/color_purple"
         android:gravity="center_vertical"
