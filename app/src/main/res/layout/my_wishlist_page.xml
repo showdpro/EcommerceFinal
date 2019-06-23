@@ -18,22 +18,23 @@
             >
 
             <LinearLayout
+
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="250dp"
                 android:orientation="horizontal"
                 android:padding="10dp">
 
                 <ImageView
                     android:id="@+id/wish_prod_image"
                     android:layout_width="170dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="240dp"
                     android:contentDescription="@string/prod_name"
                     android:scaleType="centerCrop"
                     android:src="@drawable/ar_selfie" />
 
                 <LinearLayout
                     android:layout_width="170dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="240dp"
                     android:layout_marginStart="10dp"
                     android:orientation="vertical"
                     android:padding="10dp">
@@ -114,7 +115,7 @@
                         android:layout_height="match_parent"
                         android:text="@string/cart"
                         android:textStyle="bold"
-                        android:textSize="16sp"
+                        android:textSize="20sp"
                         android:textAllCaps="true"
                         android:textColor="#FFF"
                         android:textAlignment="center"
@@ -148,7 +149,7 @@
                         android:layout_height="match_parent"
                         android:text="@string/remove_cart"
                         android:textStyle="bold"
-                        android:textSize="16sp"
+                        android:textSize="20sp"
                         android:textAllCaps="true"
                         android:textColor="#FFF"
                         android:textAlignment="center"

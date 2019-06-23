@@ -20,21 +20,21 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="400dp"
                 android:orientation="horizontal"
                 android:padding="10dp">
 
                 <ImageView
                     android:id="@+id/cart_prod_image"
-                    android:layout_width="170dp"
-                    android:layout_height="240dp"
+                    android:layout_width="330dp"
+                    android:layout_height="match_parent"
                     android:contentDescription="@string/prod_name"
                     android:scaleType="centerCrop"
                     android:src="@drawable/ar_selfie" />
 
                 <LinearLayout
-                    android:layout_width="170dp"
-                    android:layout_height="240dp"
+                    android:layout_width="220dp"
+                    android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:orientation="vertical"
                     android:padding="10dp">
@@ -48,7 +48,7 @@
                         android:text="@string/prod_name"
                         android:textAllCaps="false"
                         android:textColor="#000"
-                        android:textSize="20sp"
+                        android:textSize="35sp"
                         android:layout_margin="10dp"
                         android:textStyle="normal" />
 
@@ -62,7 +62,7 @@
                         android:text="@string/prod_price"
                         android:textAllCaps="false"
                         android:textColor="#000"
-                        android:textSize="20sp"
+                        android:textSize="35sp"
                         android:layout_margin="10dp"
                         android:textStyle="normal" />
 
@@ -75,7 +75,7 @@
                         android:textAllCaps="false"
                         android:textColor="@color/grey"
                         android:layout_margin="10dp"
-                        android:textSize="20sp"
+                        android:textSize="35sp"
                         android:textStyle="normal" />
 
 
@@ -91,31 +91,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:padding="10dp">
+                android:padding="15dp">
 
                 <LinearLayout
                     android:id="@+id/addTo_wishList"
-                    android:layout_width="175dp"
-                    android:layout_height="50dp"
+                    android:layout_width="230dp"
+                    android:layout_height="70dp"
                     android:orientation="horizontal"
-                    android:padding="10dp"
+                    android:padding="12dp"
                     android:background="@drawable/button_box_purple"
                     >
 
                     <ImageView
                         android:contentDescription="@string/cat_desc"
                         android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_height="40dp"
                         android:src="@drawable/wishlist"
 
                         />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:text="@string/wishlist"
                 android:textStyle="bold"
-                android:textSize="20sp"
+                android:textSize="36sp"
                 android:textAllCaps="true"
                 android:textColor="#FFF"
               android:textAlignment="center"
@@ -127,18 +127,18 @@
 
                 <LinearLayout
                     android:id="@+id/remove_cart"
-                    android:layout_width="175dp"
-                    android:layout_height="50dp"
+                    android:layout_width="250dp"
+                    android:layout_height="70dp"
                     android:orientation="horizontal"
                     android:padding="10dp"
                     android:background="@drawable/button_box_purple"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="40dp"
                     >
 
                     <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:contentDescription="@string/remove_cart"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
                         android:src="@drawable/remove_cart"
 
                         />
@@ -148,7 +148,7 @@
                         android:layout_height="match_parent"
                         android:text="@string/remove_cart"
                         android:textStyle="bold"
-                        android:textSize="20sp"
+                        android:textSize="36sp"
                         android:textAllCaps="true"
                         android:textColor="#FFF"
                         android:textAlignment="center"
