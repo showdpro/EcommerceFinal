@@ -26,7 +26,7 @@ public class help_centre extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                Intent callIntent = new Intent(Intent.ACTION_DIAL);
                 final Intent intent = callIntent.setData(Uri.parse("tel:" + cust_care_number));
                 startActivity(intent);
 
@@ -41,12 +41,13 @@ public class help_centre extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                Intent email = new Intent(Intent.ACTION_SEND);
-                email.putExtra(Intent.EXTRA_EMAIL, cust_care_email);
+
+                Intent email = new Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:" + cust_care_email));
+//                email.putExtra(Intent.EXTRA_EMAIL, cust_care_email);
 
 
                 //need this to prompts email client only
-                email.setType("message/rfc822");
+//                email.setDataAndType(Uri.parse(cust_care_email),"message/rfc822");
 
                 startActivity(Intent.createChooser(email,cust_care_email ));
                 Toast.makeText(getApplicationContext(),"Email sent successfully",Toast.LENGTH_SHORT).show();
