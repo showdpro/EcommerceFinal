@@ -21,7 +21,6 @@ public class help_centre extends AppCompatActivity {
         setContentView(R.layout.activity_help_centre);
 
         call=findViewById(R.id.call_img);
-
         call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,8 +28,6 @@ public class help_centre extends AppCompatActivity {
                 Intent callIntent = new Intent(Intent.ACTION_DIAL);
                 final Intent intent = callIntent.setData(Uri.parse("tel:" + cust_care_number));
                 startActivity(intent);
-
-
             }
         });
 
