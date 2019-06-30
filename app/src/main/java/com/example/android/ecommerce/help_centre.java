@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class help_centre extends AppCompatActivity {
@@ -14,6 +16,7 @@ public class help_centre extends AppCompatActivity {
     ImageView call, mail;
     String cust_care_number="9315320663";
     String cust_care_email="innogeeksndroid@gmail.com";
+    TextView b1,b2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +51,31 @@ public class help_centre extends AppCompatActivity {
 
                 startActivity(Intent.createChooser(email,cust_care_email ));
                 Toast.makeText(getApplicationContext(),"Email sent successfully",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        b1= findViewById(R.id.cancel_button);
+
+        b1.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v1) {
+
+                Intent home = new Intent(help_centre.this, FirstPage.class);
+                startActivity(home);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
+            }
+        });
+
+
+        b2= findViewById(R.id.done_button);
+
+        b2.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v1) {
+
+                Intent home = new Intent(help_centre.this, FirstPage.class);
+                startActivity(home);
+                overridePendingTransition(android.R.anim.slide_in_left, android.R.anim.slide_out_right);
             }
         });
     }

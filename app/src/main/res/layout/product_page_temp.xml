@@ -5,8 +5,13 @@
     android:layout_height="wrap_content"
     android:background="#fff">
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+
     <androidx.cardview.widget.CardView
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="10dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:layout_width="match_parent"
@@ -26,7 +31,7 @@
                 android:layout_width="180dp"
                 android:layout_height="200dp"
                 android:padding="4dp"
-                android:src="@drawable/ar_selfie_woldo"/>
+                />
 
             <TextView
                 android:id="@+id/product_ViewTitle"
@@ -45,7 +50,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/product_ViewPrice"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
                 android:layout_toEndOf="@id/product_imageView"
                 android:text="@string/cat_desc"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
@@ -59,7 +63,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_toEndOf="@id/product_imageView"
-                android:text="INR 56990"
+                android:text=""
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:textStyle="bold" />
 
@@ -81,5 +85,6 @@
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
+    </androidx.core.widget.NestedScrollView>
 
 </RelativeLayout>

@@ -64,7 +64,7 @@ public class FirstPage extends AppCompatActivity
         tSignInSignUp=new Intent(FirstPage.this,Sign_up_and_Sign_in.class);
         Test=new Intent(this,ProjectDescription.class);
 
-        recyclerView=(RecyclerView)findViewById(R.id.recycler_view_home);
+        recyclerView=findViewById(R.id.recycler_view_home);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         categories=new ArrayList<>();
         DatabaseReference dbCategory=FirebaseDatabase.getInstance().getReference("Categories");

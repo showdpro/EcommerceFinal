@@ -7,6 +7,10 @@
     android:layout_margin="16dp"
     >
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
     <androidx.cardview.widget.CardView
         android:id="@+id/order_card"
         android:layout_width="match_parent"
@@ -164,5 +168,6 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+    </androidx.core.widget.NestedScrollView>
 
 </RelativeLayout>
