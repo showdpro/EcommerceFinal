@@ -30,9 +30,9 @@
                 <ImageView
                     android:id="@+id/wish_prod_image"
                     android:layout_width="170dp"
-                    android:layout_height="240dp"
+                    android:layout_height="wrap_content"
                     android:contentDescription="@string/prod_name"
-                    android:scaleType="centerCrop"
+
                     android:src="@drawable/ar_selfie" />
 
                 <LinearLayout
