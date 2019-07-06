@@ -71,7 +71,10 @@ public class ProjectDescription extends AppCompatActivity {
       //  iconCart = findViewById(R.id.icon_cart);
 
 
+        //ViewPager viewpager = findViewById(R.id.temp_view_pager);
 
+        //ImageAdapter adapter = new ImageAdapter(this);
+        //viewpager.setAdapter(adapter);
         save = (Button) findViewById(R.id.Save_Button);
 
         editText1 = findViewById(R.id.temp_user_name);
