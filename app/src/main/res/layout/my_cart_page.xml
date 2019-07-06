@@ -31,9 +31,9 @@
                 <ImageView
                     android:id="@+id/cart_prod_image"
                     android:layout_width="170dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="240dp"
                     android:contentDescription="@string/prod_name"
-
+                    android:scaleType="centerCrop"
                     android:src="@drawable/ar_selfie" />
 
                 <LinearLayout

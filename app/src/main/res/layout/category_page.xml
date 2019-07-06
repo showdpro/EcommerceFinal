@@ -19,6 +19,7 @@
             android:id="@+id/category_image"
             android:layout_width="match_parent"
             android:layout_height="300dp"
+            android:scaleType="centerCrop"
             android:src="@drawable/ar_selfie"
             android:contentDescription="@string/ar_selfie"/>
 
@@ -27,6 +28,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+
             app:cardBackgroundColor="#fff">
 
             <LinearLayout
